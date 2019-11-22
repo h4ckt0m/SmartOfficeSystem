@@ -1,0 +1,23 @@
+{
+  "A1": {
+    "usuario": "A1",
+    "password": "123456",
+    "recuerdame": true,
+    "nombre": "Emilio",
+    "apellidos": "Perez Garcia"
+    },
+  "A2": {
+    "usuario": "A2",
+    "password": "123456",
+    "recuerdame": true,
+    "nombre": "Julian",
+    "apellidos": "De la Hera Martinez"
+    },
+  "A3": {
+    "usuario": "A3",
+    "password": "123456",
+    "recuerdame": true,
+    "nombre": "Asuncion",
+    "apellidos": "Herreros Herreros"
+    }
+}
