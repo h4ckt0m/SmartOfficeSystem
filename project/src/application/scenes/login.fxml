@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,7 +14,7 @@
 
 <AnchorPane onKeyPressed="#pressEnter" prefHeight="490.0" prefWidth="751.0" style="-fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerLogin">
    <children>
-      <ImageView fitHeight="229.0" fitWidth="293.0" layoutX="252.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="SOSImage" fitHeight="229.0" fitWidth="293.0" layoutX="252.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/soslogo.png" />
          </image>
@@ -23,26 +24,26 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="213.0" layoutY="342.0" prefHeight="20.0" prefWidth="81.0" text="Contraseña:" textFill="WHITE">
+      <Label fx:id="contra" layoutX="213.0" layoutY="342.0" prefHeight="20.0" prefWidth="81.0" text="Contraseña:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField fx:id="userField" layoutX="302.0" layoutY="294.0" />
       <PasswordField fx:id="pField" layoutX="302.0" layoutY="339.0" />
-      <CheckBox layoutX="325.0" layoutY="378.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="103.0" text="Recuérdame" textFill="WHITE">
+      <CheckBox fx:id="recuerda" layoutX="325.0" layoutY="378.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="103.0" text="Recuérdame" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <Button layoutX="342.0" layoutY="423.0" mnemonicParsing="false" onAction="#checkUserPassword" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #4e54c8;" text="Entrar" textFill="WHITE">
+      <Button fx:id="entrar" layoutX="342.0" layoutY="423.0" mnemonicParsing="false" onAction="#checkUserPassword" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #4e54c8;" text="Entrar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Pane fx:id="pane1" prefHeight="25.0" prefWidth="751.0">
          <children>
-            <Label fx:id="upperBar" prefHeight="25.0" prefWidth="751.0" style="-fx-background-color: linear-gradient(to right, #ad5389, #3c1053);" />
+            <Label fx:id="upperBar" prefHeight="25.0" prefWidth="755.0" style="-fx-background-color: linear-gradient(to right, #ad5389, #3c1053);" />
             <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="723.0" layoutY="3.0" onMouseClicked="#exit">
                <image>
                   <Image url="@../../resources/close.png" />
@@ -50,5 +51,10 @@
             </ImageView>
          </children>
       </Pane>
+      <Button layoutX="685.0" layoutY="453.0" mnemonicParsing="false" onAction="#partyMode" prefHeight="37.0" prefWidth="70.0" style="-fx-background-color: TRANSPARENT;">
+         <tooltip>
+            <Tooltip text="PARTY MODE" />
+         </tooltip>
+      </Button>
    </children>
 </AnchorPane>

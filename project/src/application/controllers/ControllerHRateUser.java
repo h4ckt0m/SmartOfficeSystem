@@ -29,14 +29,11 @@ public class ControllerHRateUser implements Initializable {
 
 	@FXML
 	private Label l1;
-	Stage stage;
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Platform.runLater(() -> {
+		/*Platform.runLater(() -> {
 			stage = (Stage) l1.getScene().getWindow();
-		});
-		
+		});*/
 		
 		int max = 200;
 		int min = 50;
@@ -53,37 +50,6 @@ public class ControllerHRateUser implements Initializable {
 		// Aquí se pone en marcha el timer cada segundo.
 		Timer timer = new Timer();
 		// Dentro de 0 milisegundos avísame cada 1000 milisegundos
-		timer.scheduleAtFixedRate(timerTask, 0, 1000);
-
-		
-		/*Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
-
-        alert.showAndWait();*/
-	}
-
-	public void change() {
-		try {
-			Parent root;
-			root = FXMLLoader.load(getClass().getResource("/application/scenes/login.fxml"));
-			stage.setTitle("SOS - Login");
-			double w = stage.getWidth();
-			double h = stage.getHeight();
-			stage.setScene(new Scene(root));
-			stage.setWidth(w);
-			stage.setHeight(h);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		MessageWindow m = new MessageWindow("MESSAGE\nMessage window 2", stage);
-	}
-	public void exit() {
-		/*Stage stage = (Stage) l1.getScene().getWindow();
-		stage.close();*/
-		System.exit(0);
-		
+		timer.scheduleAtFixedRate(timerTask, 0, 2000);
 	}
 }

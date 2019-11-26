@@ -1,0 +1,10 @@
+{
+  "message": "message json file updated",
+  "committer": {
+    "name": "Gonzalo Alcaide",
+    "email": "gonzalo.alcaide10@gmail.com"
+  },
+  "content": "ewogICIyMDE5LzExLzEwIDE4OjA0OjA4IjogIi1BZG1pbjogSG9sYSBlbXBsZWFkbyAxIiwKICAiMjAxOS8xMS8xMCAxODowNToyNiI6ICItT2ZpOiBIZXkgcXVlIHBhc2EgamVmZSIsCiAgIjIwMTkvMTEvMTAgMTg6MDY6MDQiOiAiLUFkbWluOiBQdWVzIG5hZGEsIGFxdWkgcGVuc2FuZG8gZW4gdGkiLAogICIyMDE5LzExLzIxIDIwOjQ0OjE4IjogIi1PZmk6IE9rZXksIG5vIHNlIGNvbW8gdG9tYXJtZSBlc28iLAogICIyMDE5LzExLzIxIDIwOjQ4OjUyIjogIi1BZG1pbjogdG9tYXRlbG8gY29tbyBxdWllcmFzIiwKICAiMjAxOS8xMS8yMiAxNTo1MToxMyI6ICItQWRtaW46IGhvbGEgbXVuZG8iCn0=",
+  "branch": "mensajes",
+  "sha": "56a324e0737512a2a4a0bfe8f57d246fd2d37371"
+}
