@@ -40,10 +40,6 @@ public class Fecha {
 
     @Override
     public String toString() {
-        return "Fecha{" +
-                "year=" + year +
-                ", mes=" + mes +
-                ", dia=" + dia +
-                '}';
+        return dia + "/" + mes + "/" + year;
     }
 }

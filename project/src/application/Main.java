@@ -50,8 +50,7 @@ public class Main extends Application {
 	public static JSONObject loggedAdmin;
 	
 	public static Stage stage;
-	private static Scene loginScene;
-	private static Scene usuarioScene;
+	public static Scene loginScene;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -64,7 +63,6 @@ public class Main extends Application {
        
        	loginScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/login.fxml")));
        	//chatAScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
-       	usuarioScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaUsuario.fxml")));
        	
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setScene(loginScene);
@@ -181,23 +179,6 @@ public class Main extends Application {
 		processInputReader.close();
 		process.destroy();
 		return response;
-	}
-	
-	public static void change(String scene) {
-		try {
-			switch(scene){
-			case "login":
-				stage.setScene(loginScene);
-				break;
-			case "user":
-				stage.setScene(usuarioScene);
-				break;
-			}
-			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	public static void exit() {

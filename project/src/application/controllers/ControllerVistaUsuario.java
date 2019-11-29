@@ -10,6 +10,8 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -20,35 +22,57 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import application.Main;
 
 public class ControllerVistaUsuario implements Initializable {
-    @FXML
-    private VBox pnItems = null;
-    @FXML
-    private Pane panePrincipal;
-    @FXML
-    private Pane paneHR;
-    @FXML
-    private Pane paneRendimiento;
-    @FXML
-    private Button btnHR;
-    @FXML
-    private Button btnHome;
-    @FXML
-    private Button btnRendimiento;
-    @FXML
-    private AnchorPane anchor;
+	 @FXML
+	    private VBox pnItems = null;
+	    @FXML
+	    private Pane panePrincipal;
+	    @FXML
+	    private Pane paneHR;
+	    @FXML
+	    private Pane paneRendimiento;
+	    @FXML
+	    private Pane panePerfil;
+	    @FXML
+	    private Pane paneConfi;
+	    @FXML
+	    private Button btnHR;
+	    @FXML
+	    private Button btnHome;
+	    @FXML
+	    private Button btnRendimiento;
+	    @FXML
+	    private Button btnConfiguracion;
+	    @FXML
+	    private Button btnPerfil;
+	    @FXML
+	    private Label lbNomApe;
+	    @FXML
+	    private Label lbDepartamento;
+	    @FXML
+	    private Label lbFecha;
+	    @FXML
+	    private AnchorPane anchor;
+	    @FXML
+	    private ImageView image;
+
+	    public static int i;
     
 	private double xOffset = 0;
 	private double yOffset = 0;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Node[] nodes = new Node[10];
-        for (int i = 0; i < nodes.length; i++) {
+        
+    	Node[] nodes = new Node[Main.loggedUser.getEa().size()];
+        for (i = 0; i < nodes.length; i++) {
             try {
 
                 final int j = i;
@@ -66,6 +90,15 @@ public class ControllerVistaUsuario implements Initializable {
                 e.printStackTrace();
             }
         }
+
+        lbNomApe.setText(Main.loggedUser.getNombre() + " " + Main.loggedUser.getApellidos());
+        lbDepartamento.setText("Departamento: " + Main.loggedUser.getDepartamento());
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year  = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day   = localDate.getDayOfMonth();
+        lbFecha.setText(day + "/" + month + "/" + year);
 
         anchor.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
@@ -89,13 +122,26 @@ public class ControllerVistaUsuario implements Initializable {
             panePrincipal.toFront();
         }
         if (actionEvent.getSource() == btnHR) {
-        	Pane newLoadedPane = FXMLLoader.load(getClass().getResource("/application/scenes/hRateUser.fxml"));
-        	paneHR.getChildren().add(newLoadedPane);
+            Pane vistaPaneHR = FXMLLoader.load(getClass().getResource("/application/scenes/vistaHR.fxml"));
+            paneHR.getChildren().add(vistaPaneHR);
             paneHR.toFront();
         }
         if (actionEvent.getSource() == btnRendimiento) {
+            Pane vistaPaneRendimiento = FXMLLoader.load(getClass().getResource("/application/scenes/vistaRendimiento.fxml"));
+            paneRendimiento.getChildren().add(vistaPaneRendimiento);
             paneRendimiento.toFront();
         }
+        if(actionEvent.getSource() == btnPerfil){
+            Pane vistaPanePerfil = FXMLLoader.load(getClass().getResource("/application/scenes/vistaPerfilUsuario.fxml"));
+            panePerfil.getChildren().add(vistaPanePerfil);
+            panePerfil.toFront();
+        }
+        if (actionEvent.getSource() == btnConfiguracion){
+            Pane vistaPaneConfi = FXMLLoader.load(getClass().getResource("/application/scenes/vistaConfiguracionUsuario.fxml"));
+            paneConfi.getChildren().add(vistaPaneConfi);
+            paneConfi.toFront();
+        }
+
     }
     
    public void openChat() throws IOException {

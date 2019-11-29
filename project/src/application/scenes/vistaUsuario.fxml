@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,17 +32,12 @@
                         <Font size="11.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="170.0" styleClass="button1" stylesheets="@StyleSheets/StyleVistaUsario.css" text="Perfil" textFill="WHITE">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="btnRendimiento" mnemonicParsing="false" onAction="#handleClicks" prefHeight="46.0" prefWidth="170.0" styleClass="button1" stylesheets="@StyleSheets/StyleVistaUsario.css" text="Rendimiento" textFill="WHITE">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="170.0" styleClass="button1" stylesheets="@StyleSheets/StyleVistaUsario.css" text="Configuración" textFill="WHITE">
+                  <Button fx:id="btnConfiguracion" mnemonicParsing="false" onAction="#handleClicks" prefHeight="46.0" prefWidth="170.0" styleClass="button1" stylesheets="@StyleSheets/StyleVistaUsario.css" text="Configuración" textFill="WHITE">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -59,7 +53,7 @@
          </children></Pane>
       <Pane layoutX="170.0" prefHeight="600.0" prefWidth="1110.0" style="-fx-background-color: #1182F0;">
          <children>
-            <Button layoutX="43.0" layoutY="207.0" mnemonicParsing="false" styleClass="button2" stylesheets="@StyleSheets/StyleVistaUsario.css">
+            <Button fx:id="btnPerfil" layoutX="43.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleClicks" styleClass="button2" stylesheets="@StyleSheets/StyleVistaUsario.css">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="36.0">
                      <image>
@@ -99,7 +93,7 @@
             <Line endX="166.0" layoutX="177.0" layoutY="257.0" startX="-157.0" stroke="WHITE" />
             <Pane layoutY="55.0" prefHeight="131.0" prefWidth="364.0" style="-fx-background-color: #1BB8FF;">
                <children>
-                  <ImageView fitHeight="145.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="image" fitHeight="145.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../resources/imge_1.jpg" />
                      </image>
@@ -115,7 +109,7 @@
                      </graphic>
                   </Button>
                   <Label fx:id="lbDepartamento" layoutX="145.0" layoutY="58.0" text="Departamento:" />
-                  <Label layoutX="145.0" layoutY="93.0" text="09/11/2019" />
+                  <Label fx:id="lbFecha" layoutX="145.0" layoutY="93.0" text="09/11/2019" />
                </children></Pane>
             <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="24.0" layoutY="277.0">
                <image>
@@ -172,16 +166,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="825.0" layoutY="18.0" promptText="Search" />
-            <Button layoutX="974.0" layoutY="14.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="0.0" styleClass="button2" stylesheets="@StyleSheets/StyleVistaUsario.css">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="26.0">
-                     <image>
-                        <Image url="@../../resources/icons8_search_50px_2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button layoutX="974.0" layoutY="14.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="0.0" styleClass="button2" stylesheets="@StyleSheets/StyleVistaUsario.css" />
             <Button layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" onAction="#exit" prefHeight="18.0" prefWidth="25.0" styleClass="button2" stylesheets="@StyleSheets/StyleVistaUsario.css">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="26.0">
@@ -193,6 +178,8 @@
             </Button>
             <StackPane layoutX="364.0" layoutY="55.0" prefHeight="546.0" prefWidth="746.0">
                <children>
+                  <Pane fx:id="paneConfi" prefHeight="200.0" prefWidth="200.0" />
+                  <Pane fx:id="panePerfil" prefHeight="200.0" prefWidth="200.0" />
                   <Pane fx:id="paneRendimiento" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #09FF00;" />
                   <Pane fx:id="paneHR" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A053AA;" />
                   <Pane fx:id="panePrincipal" prefHeight="572.0" prefWidth="752.0" style="-fx-background-color: #3B3292;">

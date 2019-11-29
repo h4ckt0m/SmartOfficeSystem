@@ -61,7 +61,9 @@ public class LogOutWindow{
 	public void exit() {
 		Stage s = (Stage) aceptar.getScene().getWindow();
 		s.close();
-		Main.change("login");
+		Main.stage.setScene(Main.loginScene);
+		Main.stage.setX((Main.primScreenBounds.getWidth() - Main.stage.getWidth()) / 2);
+		Main.stage.setY((Main.primScreenBounds.getHeight() - Main.stage.getHeight()) / 2);
 		
 	}
 }

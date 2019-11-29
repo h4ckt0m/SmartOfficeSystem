@@ -326,11 +326,8 @@ public class ControllerLogin implements Initializable {
 				MessageWindow m = new MessageWindow(
 						"ACCESS GRANTED\nLogin successfully completed\nWelcome Administrator", Main.stage);
 				Main.loggedAdmin = Main.admin.get(user);
-				//Main.change("chatAdmin");
-				
-				Scene chatUScene;
 				try {
-					chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
+					Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
 					Stage primaryStage = new Stage();
 					primaryStage.initStyle(StageStyle.UNDECORATED);
 					primaryStage.setScene(chatUScene);
@@ -349,7 +346,15 @@ public class ControllerLogin implements Initializable {
 				MessageWindow m = new MessageWindow(
 						"ACCESS GRANTED\nLogin successfully completed\nWelcome office worker", Main.stage);
 					Main.loggedUser = Main.office.get(user);
-					Main.change("user");
+					try {
+						Scene usuarioScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaUsuario.fxml")));
+						Main.stage.setScene(usuarioScene);
+						Main.stage.setX((Main.primScreenBounds.getWidth() - Main.stage.getWidth()) / 2);
+						Main.stage.setY((Main.primScreenBounds.getHeight() - Main.stage.getHeight()) / 2);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 			} else {
 				MessageWindow m = new MessageWindow("INCORRECT PASSWORD\nPlease check the data introduced", Main.stage);
 				pField.setText("");
