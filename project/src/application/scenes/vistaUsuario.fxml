@@ -178,10 +178,10 @@
             </Button>
             <StackPane layoutX="364.0" layoutY="55.0" prefHeight="546.0" prefWidth="746.0">
                <children>
-                  <Pane fx:id="paneConfi" prefHeight="200.0" prefWidth="200.0" />
-                  <Pane fx:id="panePerfil" prefHeight="200.0" prefWidth="200.0" />
-                  <Pane fx:id="paneRendimiento" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #09FF00;" />
-                  <Pane fx:id="paneHR" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A053AA;" />
+                  <Pane fx:id="paneConfi" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="panePerfil" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3B3292;" />
+                  <Pane fx:id="paneRendimiento" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneHR" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
                   <Pane fx:id="panePrincipal" prefHeight="572.0" prefWidth="752.0" style="-fx-background-color: #3B3292;">
                      <children>
                         <ScrollPane layoutY="47.0" prefHeight="498.0" prefWidth="746.0" stylesheets="@StyleSheets/StyleVistaUsario.css">
