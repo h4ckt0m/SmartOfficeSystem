@@ -1,0 +1,352 @@
+{
+  "Ofi1": {
+    "usuario": "Ofi1",
+    "password": "123ABC",
+    "recuerdame": true,
+    "nombre": "Pedro",
+    "apellidos": "Sanchez Perez",
+    "sueldo": 5000,
+    "departamento": "Calidad",
+    "f_nac": {
+      "year": 1974,
+      "mes": 3,
+      "dia": 27
+    },
+    "pulsos": [
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 11
+        },
+        "dato": 80
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 12
+        },
+        "dato": 90
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 13
+        },
+        "dato": 85
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 14
+        },
+        "dato": 100
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 15
+        },
+        "dato": 95
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 18
+        },
+        "dato": 85
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 19
+        },
+        "dato": 84
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 20
+        },
+        "dato": 91
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 21
+        },
+        "dato": 81
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 22
+        },
+        "dato": 75
+      }
+    ],
+    "ea": [
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 11
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 11
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "09:20:00",
+        "h_salida": "17:50:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 12
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 12
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "10:00:00",
+        "h_salida": "18:30:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 13
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 13
+        },
+        "tiempo_h": 8.3,
+        "h_entrada": "08:40:00",
+        "h_salida": "17:00:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 14
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 14
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "09:20:00",
+        "h_salida": "17:50:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 15
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 15
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "10:00:00",
+        "h_salida": "18:30:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 18
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 18
+        },
+        "tiempo_h": 8.3,
+        "h_entrada": "08:40:00",
+        "h_salida": "17:00:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 19
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 19
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "09:20:00",
+        "h_salida": "17:50:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 20
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 20
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "10:00:00",
+        "h_salida": "18:30:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 21
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 21
+        },
+        "tiempo_h": 8.3,
+        "h_entrada": "08:40:00",
+        "h_salida": "17:00:00"
+      },
+      {
+        "entrada": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 22
+        },
+        "salida": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 22
+        },
+        "tiempo_h": 8.5,
+        "h_entrada": "10:00:00",
+        "h_salida": "18:30:00"
+      }
+    ],
+    "productividad": [
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 11
+        },
+        "act_plan": 5,
+        "act_compl": 1,
+        "productividad": 0.2
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 12
+        },
+        "act_plan": 15,
+        "act_compl": 20,
+        "productividad": 1.3
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 13
+        },
+        "act_plan": 8,
+        "act_compl": 6,
+        "productividad": 0.75
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 14
+        },
+        "act_plan": 10,
+        "act_compl": 10,
+        "productividad": 1
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 15
+        },
+        "act_plan": 7,
+        "act_compl": 6,
+        "productividad": 0.86
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 18
+        },
+        "act_plan": 6,
+        "act_compl": 9,
+        "productividad": 1.5
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 19
+        },
+        "act_plan": 10,
+        "act_compl": 6,
+        "productividad": 0.6
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 20
+        },
+        "act_plan": 3,
+        "act_compl": 4,
+        "productividad": 1.3
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 21
+        },
+        "act_plan": 12,
+        "act_compl": 20,
+        "productividad": 1.6
+      },
+      {
+        "fecha": {
+          "year": 2019,
+          "mes": 11,
+          "dia": 22
+        },
+        "act_plan": 1,
+        "act_compl": 1,
+        "productividad": 1
+      }
+    ]
+  }
+}
