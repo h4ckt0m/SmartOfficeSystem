@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="746.0" style="-fx-background-color: #3B3292;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerVistaPerfilUsuario">
+   <children>
+      <VBox prefHeight="546.0" prefWidth="384.0">
+         <children>
+            <Label prefHeight="52.0" prefWidth="100.0" text="Usuario:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="100.0" text="Nombre:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="100.0" text="Apellidos:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="199.0" text="Fecha de nacimiento:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="143.0" text="Departamento:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="100.0" text="Sueldo:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="129.0" text="Pulso medio:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="52.0" prefWidth="207.0" text="Productividad media:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="40.0" top="55.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="386.0" prefHeight="546.0" prefWidth="360.0">
+         <children>
+            <Label fx:id="lbUsuario" prefHeight="52.0" prefWidth="307.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbNombre" prefHeight="52.0" prefWidth="305.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbApellidos" prefHeight="52.0" prefWidth="305.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbFecNac" prefHeight="52.0" prefWidth="300.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDepart" prefHeight="52.0" prefWidth="296.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSueldo" prefHeight="52.0" prefWidth="297.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbPM" prefHeight="52.0" prefWidth="301.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbProductM" prefHeight="52.0" prefWidth="301.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="30.0" top="55.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>

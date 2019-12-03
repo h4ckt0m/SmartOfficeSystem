@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onKeyPressed="#pressEnter" prefHeight="155.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lb1" alignment="CENTER" layoutX="134.0" layoutY="69.0" onKeyPressed="#pressEnter" text="¿Seguro que quieres salir?" textAlignment="CENTER" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="cancelar" layoutX="245.0" layoutY="115.0" mnemonicParsing="false" onAction="#close" text="Cancelar" AnchorPane.bottomAnchor="9.0" />
+      <Button fx:id="aceptar" layoutX="159.0" layoutY="115.0" mnemonicParsing="false" onAction="#exit" text="Aceptar" />
+   </children>
+</AnchorPane>

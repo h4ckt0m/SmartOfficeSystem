@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="746.0" spacing="60.0" style="-fx-background-color: #3B3292; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerListaVistaUsuario">
+    <children>
+        <Label fx:id="lbFecha" prefHeight="17.0" prefWidth="69.0" text="13/11/2019" textFill="#b7c3d7">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin></Label>
+        <Label fx:id="lbHE" prefHeight="17.0" prefWidth="53.0" text="08:30:30" textFill="#b7c3d7">
+            <HBox.margin>
+                <Insets />
+            </HBox.margin>
+        </Label>
+        <Label fx:id="lbHS" prefHeight="17.0" prefWidth="52.0" text="16:30:30" textFill="#b7c3d7">
+            <HBox.margin>
+                <Insets />
+            </HBox.margin>
+        </Label>
+      <Label fx:id="lbAP" prefHeight="17.0" prefWidth="23.0" text="10" textFill="#b7c3d7">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin></Label>
+      <Label fx:id="lbAC" text="8" textFill="#b7c3d7">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin></Label>
+        <Label fx:id="lbProductividad" prefHeight="17.0" prefWidth="44.0" text="80%" textFill="#b7c3d7">
+            <HBox.margin>
+                <Insets left="10.0" />
+            </HBox.margin>
+        </Label>
+      <CheckBox fx:id="cbCompletado" mnemonicParsing="false" />
+    </children>
+    <effect>
+        <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+    </effect>
+   <padding>
+      <Insets left="30.0" />
+   </padding>
+</HBox>
