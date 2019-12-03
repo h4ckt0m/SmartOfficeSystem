@@ -23,5 +23,6 @@ public class ControllerListaVistaAdmin implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //btnCons.setId();
+        //btnCons.setId();
     }
 }
