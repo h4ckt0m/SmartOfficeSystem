@@ -1,0 +1,10 @@
+{
+  "message": "message json file updated",
+  "committer": {
+    "name": "Gonzalo Alcaide",
+    "email": "gonzalo.alcaide10@gmail.com"
+  },
+  "content": "e30=",
+  "branch": "chat",
+  "sha": "89e88f0c8d160e4a192b251452a1aad71b5f1fdc"
+}

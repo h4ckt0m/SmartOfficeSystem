@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerVistaAdmin">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerVistaAdmin">
    <children>
       <Pane prefHeight="600.0" prefWidth="170.0" style="-fx-background-color: #3B3292;">
          <children>
@@ -48,16 +48,7 @@
          </children></Pane>
       <Pane layoutX="170.0" prefHeight="600.0" prefWidth="1110.0" style="-fx-background-color: #1182F0;">
          <children>
-            <Button fx:id="btnPerfil" layoutX="75.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleClicks" styleClass="button2" stylesheets="@StyleSheets/StyleVistaAdmin.css">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="36.0">
-                     <image>
-                        <Image url="@../../resources/icons8_user_50px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnChat" layoutX="155.0" layoutY="205.0" mnemonicParsing="false" styleClass="button2" stylesheets="@StyleSheets/StyleVistaAdmin.css">
+            <Button layoutX="73.0" layoutY="207.0" mnemonicParsing="false" onAction="#openChat" styleClass="button2" stylesheets="@StyleSheets/StyleVistaAdmin.css">
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="35.0">
                      <image>
@@ -85,7 +76,7 @@
                      </image>
                   </ImageView>
                   <Label fx:id="lbNomApe" layoutX="145.0" layoutY="36.0" text="Nombre y Apellidos" />
-                  <Button layoutX="306.0" layoutY="44.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" styleClass="button3" stylesheets="@StyleSheets/StyleVistaAdmin.css">
+                  <Button layoutX="306.0" layoutY="44.0" mnemonicParsing="false" onAction="#logOut" prefHeight="17.0" prefWidth="28.0" styleClass="button3" stylesheets="@StyleSheets/StyleVistaAdmin.css">
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="34.0">
                            <image>
@@ -171,7 +162,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="25.0" styleClass="button2" stylesheets="@StyleSheets/StyleVistaAdmin.css">
+            <Button layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" onAction="#exit" prefHeight="18.0" prefWidth="25.0" styleClass="button2" stylesheets="@StyleSheets/StyleVistaAdmin.css">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="26.0">
                      <image>
@@ -182,10 +173,12 @@
             </Button>
             <StackPane layoutX="364.0" layoutY="55.0" prefHeight="546.0" prefWidth="746.0">
                <children>
-                  <Pane fx:id="paneConfi" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
-                  <Pane fx:id="paneHR" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
-                  <Pane fx:id="paneRendimiento" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
-                  <Pane fx:id="panePerfil" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneCalAire" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneTemperatura" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneHumedad" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneLuminosidad" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1182F0;" />
+                  <Pane fx:id="paneRuido" prefHeight="200.0" prefWidth="200.0" />
+                  <Pane fx:id="paneConfi" prefHeight="200.0" prefWidth="200.0" />
                   <Pane fx:id="panePrincipal" prefHeight="572.0" prefWidth="752.0" style="-fx-background-color: #3B3292;">
                      <children>
                         <ScrollPane layoutY="47.0" prefHeight="498.0" prefWidth="746.0" stylesheets="@StyleSheets/StyleVistaAdmin.css">

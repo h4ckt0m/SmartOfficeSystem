@@ -327,11 +327,10 @@ public class ControllerLogin implements Initializable {
 						"ACCESS GRANTED\nLogin successfully completed\nWelcome Administrator", Main.stage);
 				Main.loggedAdmin = Main.admin.get(user);
 				try {
-					Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaAdmin.fxml")));
-					Stage primaryStage = new Stage();
-					primaryStage.initStyle(StageStyle.UNDECORATED);
-					primaryStage.setScene(chatUScene);
-					primaryStage.show();
+					Scene adminScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaAdmin.fxml")));
+					Main.stage.setScene(adminScene);
+					Main.stage.setX((Main.primScreenBounds.getWidth() - Main.stage.getWidth()) / 2);
+					Main.stage.setY((Main.primScreenBounds.getHeight() - Main.stage.getHeight()) / 2);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

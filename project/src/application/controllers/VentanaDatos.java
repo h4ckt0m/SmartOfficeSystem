@@ -8,6 +8,7 @@ import application.Main;
 import application.Oficinista;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +22,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,6 +31,8 @@ import javafx.stage.StageStyle;
 
 public class VentanaDatos{
 
+	@FXML
+	AnchorPane anchor;
 	@FXML
 	Label lbUsuario;
 	@FXML
@@ -59,8 +64,11 @@ public class VentanaDatos{
 	@FXML
 	LineChart<String, Number> lcPR;
 
+	private double xOffset = 0;
+	private double yOffset = 0;
+	Stage primaryStage;
 
-	public VentanaDatos(Oficinista ofi, Stage st) {
+	public VentanaDatos(Oficinista ofi) {
 		try {
 			
 			//SET ROOT AND CONTROLLER (THIS CLASS IS THE CONTROLLER)
@@ -69,11 +77,11 @@ public class VentanaDatos{
 			Parent root = loader.load();
 			
 			//BLOCK MAIN STAGE
-			Stage primaryStage = new Stage();
+			primaryStage = new Stage();
 			//primaryStage.initModality(Modality.WINDOW_MODAL); //blocks owner window
 			//primaryStage.initModality(Modality.APPLICATION_MODAL); //blocks all windows
-			//primaryStage.initStyle(StageStyle.UNDECORATED);
-			//primaryStage.initOwner(st);
+			primaryStage.initStyle(StageStyle.UNDECORATED);
+			primaryStage.initOwner(Main.stage);
 			
 			//SHOW MESSAGE WINDOW
 			//primaryStage.setTitle("Message");
@@ -93,6 +101,21 @@ public class VentanaDatos{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		anchor.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				xOffset = primaryStage.getX() - event.getScreenX();
+				yOffset = primaryStage.getY() - event.getScreenY();
+			}
+		});
+		anchor.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				primaryStage.setX(event.getScreenX() + xOffset);
+				primaryStage.setY(event.getScreenY() + yOffset);
+			}
+		});
 	}
 
 	public void handleClicks(ActionEvent actionEvent){
@@ -110,13 +133,7 @@ public class VentanaDatos{
 		}
 	}
 
-	public void pressEnter(KeyEvent event) {
-		if(event.getCode()==KeyCode.ENTER) {
-			close();
-		}
-	}
-	public void close() {
-		Stage s = (Stage) lbNombre.getScene().getWindow();
-		s.close();
+	public void exit() {
+		primaryStage.close();
 	}
 }

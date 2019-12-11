@@ -58,7 +58,7 @@ public class Main extends Application {
 		Type oficinistaHMType = new TypeToken<TreeMap<String,Oficinista>>(){}.getType();
 		office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
 		Type adminHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
-       admin = gson.fromJson(requestData("project/src/application/database/admin","master"), adminHMType);
+       	admin = gson.fromJson(requestData("project/src/application/database/admin","master"), adminHMType);
        
        	loginScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/login.fxml")));
        	//chatAScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
