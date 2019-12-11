@@ -79,7 +79,7 @@
             <Line endX="166.0" layoutX="177.0" layoutY="257.0" startX="-157.0" stroke="WHITE" />
             <Pane layoutY="55.0" prefHeight="131.0" prefWidth="364.0" style="-fx-background-color: #1BB8FF;">
                <children>
-                  <ImageView fitHeight="131.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="131.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../resources/imge_1.jpg" />
                      </image>

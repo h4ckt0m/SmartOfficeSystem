@@ -22,13 +22,13 @@
                 <Insets />
             </HBox.margin>
         </Label>
-      <Label fx:id="lbDep" prefHeight="21.0" prefWidth="106.0" text="Departamento" textFill="#b7c3d7">
+      <Label fx:id="lbDep" prefHeight="21.0" prefWidth="86.0" text="Departamento" textFill="#b7c3d7">
          <HBox.margin>
             <Insets left="20.0" />
          </HBox.margin></Label>
-      <Button fx:id="btnCons" mnemonicParsing="false" text="Button">
+      <Button fx:id="btnCons" mnemonicParsing="false" text="Acceder">
          <HBox.margin>
-            <Insets left="50.0" />
+            <Insets />
          </HBox.margin></Button>
     </children>
     <effect>

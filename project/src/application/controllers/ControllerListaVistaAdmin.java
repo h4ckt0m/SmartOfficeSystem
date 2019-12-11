@@ -34,8 +34,7 @@ public class ControllerListaVistaAdmin implements Initializable {
         btnCons.setId(String.valueOf(ControllerVistaAdmin.i));
 
         btnCons.setOnAction(event -> {
-            VentanaDatos v = new VentanaDatos("Estos son los datos de "+ofi.getNombre(),Main.stage);
-            System.out.println(ofi.getNombre());
+            VentanaDatos v = new VentanaDatos(ofi,Main.stage);
         });
     }
 }
