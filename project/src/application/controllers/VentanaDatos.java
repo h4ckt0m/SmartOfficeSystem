@@ -58,11 +58,15 @@ public class VentanaDatos{
 	@FXML
 	Pane panePR;
 	@FXML
+	Pane panePDatos;
+	@FXML
 	LineChart<String, Number> lcHR;
 	@FXML
-	LineChart<String, Number> lcEA; //Mirar como hacer este.
+	LineChart<String, Number> lcEA; // Pillar tiempo en hora para la x
 	@FXML
 	LineChart<String, Number> lcPR;
+
+	private Oficinista ofi;
 
 	private double xOffset = 0;
 	private double yOffset = 0;
@@ -70,7 +74,7 @@ public class VentanaDatos{
 
 	public VentanaDatos(Oficinista ofi) {
 		try {
-			
+			this.ofi = ofi;
 			//SET ROOT AND CONTROLLER (THIS CLASS IS THE CONTROLLER)
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/scenes/vistaDatosOfi.fxml"));
 			loader.setController(this);
@@ -90,12 +94,12 @@ public class VentanaDatos{
 			primaryStage.show();
 			
 			//SET LABELS TEXTS
-			lbUsuario.setText(ofi.getUsuario());
-			lbNombre.setText(ofi.getNombre());
-			lbApellidos.setText(ofi.getApellidos());
-			lbFechaNacimiento.setText(ofi.getF_nac().toString());
-			lbSueldo.setText(String.valueOf(ofi.getSueldo()));
-			lbDepartamento.setText(ofi.getDepartamento());
+			lbUsuario.setText(this.ofi.getUsuario());
+			lbNombre.setText(this.ofi.getNombre());
+			lbApellidos.setText(this.ofi.getApellidos());
+			lbFechaNacimiento.setText(this.ofi.getF_nac().toString());
+			lbSueldo.setText(String.valueOf(this.ofi.getSueldo()));
+			lbDepartamento.setText(this.ofi.getDepartamento());
 			
 			
 		} catch (Exception e) {
@@ -120,14 +124,28 @@ public class VentanaDatos{
 
 	public void handleClicks(ActionEvent actionEvent){
 		if (actionEvent.getSource() == btnHR) {
-
+			panePDatos.toFront();
+			lcHR.getData().clear();
+			XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+			for (int i = 0; i < ofi.getPulsos().size(); i++){
+				String fecha = ofi.getPulsos().get(i).getFecha().toString();
+				Number ppm = ofi.getPulsos().get(i).getDato();
+				series.getData().add(new XYChart.Data<String, Number>(fecha, ppm));
+			}
+			series.setName("Estadisticas Pulso Cardiaco");
+			lcHR.getData().add(series);
+			for (final XYChart.Data<String, Number> data : series.getData()) {
+				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos
+			}
 			paneHR.toFront();
 		}
 		else if(actionEvent.getSource() == btnEA){
+			panePDatos.toFront();
 
 			paneEA.toFront();
 		}
 		else if(actionEvent.getSource() == btnPR){
+			panePDatos.toFront();
 
 			panePR.toFront();
 		}

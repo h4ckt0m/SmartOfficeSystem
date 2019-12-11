@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchor" maxHeight="649.0" maxWidth="869.0" prefHeight="649.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -88,19 +89,8 @@
             </Button>
          </children>
       </Pane>
-      <StackPane layoutX="330.0" layoutY="129.0" prefHeight="518.0" prefWidth="539.0">
+      <StackPane layoutX="330.0" layoutY="129.0" prefHeight="520.0" prefWidth="539.0">
          <children>
-            <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
-               <children>
-                  <LineChart fx:id="lcHR" prefHeight="518.0" prefWidth="539.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-               </children></Pane>
             <Pane fx:id="paneEA" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <LineChart fx:id="lcEA" prefHeight="518.0" prefWidth="539.0">
@@ -121,6 +111,24 @@
                      <yAxis>
                         <NumberAxis side="LEFT" />
                      </yAxis>
+                  </LineChart>
+               </children></Pane>
+            <Pane fx:id="panePDatos" prefHeight="200.0" prefWidth="539.0" style="-fx-background-color: #3B3292 #3B3292;" />
+            <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
+               <children>
+                  <LineChart fx:id="lcHR" prefHeight="518.0" prefWidth="539.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
+                    </yAxis>
                   </LineChart>
                </children></Pane>
          </children>

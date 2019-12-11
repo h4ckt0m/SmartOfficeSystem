@@ -118,7 +118,7 @@ public class ControllerVistaAdmin implements Initializable {
         if (actionEvent.getSource() == btnHome){
 
         }
-        else if(actionEvent.getSource() == btnConfiguracion){
+        else if(actionEvent.getSource() == btnConfiguracion){ //Cambiar los demas
 
         }
         else if(actionEvent.getSource() == btnConfiguracion){
