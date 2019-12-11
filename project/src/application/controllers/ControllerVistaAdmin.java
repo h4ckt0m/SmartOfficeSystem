@@ -63,6 +63,7 @@ public class ControllerVistaAdmin implements Initializable {
 
                 nodes[i].setOnMouseEntered(event -> {
                     nodes[j].setStyle("-fx-background-color : #5B53AA");
+
                 });
                 nodes[i].setOnMouseExited(event -> {
                     nodes[j].setStyle("-fx-background-color :  #3B3292");
@@ -72,6 +73,7 @@ public class ControllerVistaAdmin implements Initializable {
                 e.printStackTrace();
             }
         }
+        System.out.println("Ok");
     }
 
     public void handleClicks(ActionEvent event){

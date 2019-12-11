@@ -1,7 +1,10 @@
 package application.controllers;
 
+import application.Main;
+import application.Oficinista;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -23,6 +26,16 @@ public class ControllerListaVistaAdmin implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //btnCons.setId();
-        //btnCons.setId();
+        Oficinista ofi = Main.office.get("Ofi".concat(String.valueOf((ControllerVistaAdmin.i)+1)));
+        lbUser.setText(ofi.getUsuario());
+        lbNombre.setText(ofi.getNombre());
+        lbApell.setText(ofi.getApellidos());
+        lbDep.setText(ofi.getDepartamento());
+        btnCons.setId(String.valueOf(ControllerVistaAdmin.i));
+
+        btnCons.setOnAction(event -> {
+            VentanaDatos v = new VentanaDatos("Estos son los datos de "+ofi.getNombre(),Main.stage);
+            System.out.println(ofi.getNombre());
+        });
     }
 }
