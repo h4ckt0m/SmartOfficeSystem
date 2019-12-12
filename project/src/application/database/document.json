@@ -7,7 +7,7 @@
     "apellidos": "Sanchez Perez",
     "sueldo": 5000,
     "departamento": "Calidad",
-    "imagen": "",
+    "imagen": "resources/imge_1.jpg",
     "f_nac": {
       "year": 1974,
       "mes": 3,
