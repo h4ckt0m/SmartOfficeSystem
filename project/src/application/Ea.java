@@ -3,7 +3,7 @@ package application;
 public class Ea{
 	protected Fecha entrada;
 	protected Fecha salida;
-	protected double tiempo;
+	protected double tiempo_h;
 	protected String h_entrada;
 	protected String h_salida;
 
@@ -13,7 +13,7 @@ public class Ea{
 	public Ea(Fecha entrada, Fecha salida, double tiempo, String h_entrada, String h_salida) {
 		this.entrada = entrada;
 		this.salida = salida;
-		this.tiempo = tiempo;
+		this.tiempo_h = tiempo;
 		this.h_entrada = h_entrada;
 		this.h_salida = h_salida;
 	}
@@ -35,11 +35,11 @@ public class Ea{
 	}
 
 	public double getTiempo() {
-		return tiempo;
+		return tiempo_h;
 	}
 
 	public void setTiempo(double tiempo) {
-		this.tiempo = tiempo;
+		this.tiempo_h = tiempo;
 	}
 
 	public String getH_entrada() {
@@ -63,7 +63,7 @@ public class Ea{
 		return "Ea{" +
 				"entrada=" + entrada +
 				", salida=" + salida +
-				", tiempo=" + tiempo +
+				", tiempo=" + tiempo_h +
 				", h_entrada='" + h_entrada + '\'' +
 				", h_salida='" + h_salida + '\'' +
 				'}';

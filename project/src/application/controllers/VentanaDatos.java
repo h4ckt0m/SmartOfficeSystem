@@ -141,12 +141,34 @@ public class VentanaDatos{
 		}
 		else if(actionEvent.getSource() == btnEA){
 			panePDatos.toFront();
-
+			lcEA.getData().clear();
+			XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+			for (int i = 0; i < ofi.getEa().size(); i++){
+				String fecha = ofi.getEa().get(i).getEntrada().toString();
+				Number horas = ofi.getEa().get(i).getTiempo();
+				series.getData().add(new XYChart.Data<String, Number>(fecha, horas));
+			}
+			series.setName("Estadisticas Horas trabajadas");
+			lcEA.getData().add(series);
+			for (final XYChart.Data<String, Number> data : series.getData()) {
+				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos
+			}
 			paneEA.toFront();
 		}
 		else if(actionEvent.getSource() == btnPR){
 			panePDatos.toFront();
-
+			lcPR.getData().clear();
+			XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+			for (int i = 0; i < ofi.getProductividad().size(); i++){
+				String fecha = ofi.getProductividad().get(i).getFecha().toString();
+				Number tareasCompletadas = ofi.getProductividad().get(i).getProductividad();
+				series.getData().add(new XYChart.Data<String, Number>(fecha, tareasCompletadas));
+			}
+			series.setName("Estadisticas productividad");
+			lcPR.getData().add(series);
+			for (final XYChart.Data<String, Number> data : series.getData()) {
+				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos
+			}
 			panePR.toFront();
 		}
 	}

@@ -95,10 +95,16 @@
                <children>
                   <LineChart fx:id="lcEA" prefHeight="518.0" prefWidth="539.0">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" />
+                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" />
+                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
                      </yAxis>
                   </LineChart>
                </children></Pane>
@@ -106,14 +112,19 @@
                <children>
                   <LineChart fx:id="lcPR" prefHeight="518.0" prefWidth="539.0">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" />
+                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" />
+                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
                      </yAxis>
                   </LineChart>
                </children></Pane>
-            <Pane fx:id="panePDatos" prefHeight="200.0" prefWidth="539.0" style="-fx-background-color: #3B3292 #3B3292;" />
             <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
                <children>
                   <LineChart fx:id="lcHR" prefHeight="518.0" prefWidth="539.0">
@@ -131,6 +142,7 @@
                     </yAxis>
                   </LineChart>
                </children></Pane>
+            <Pane fx:id="panePDatos" prefHeight="200.0" prefWidth="539.0" style="-fx-background-color: #3B3292 #3B3292;" />
          </children>
       </StackPane>
    </children>
