@@ -1,13 +1,13 @@
 {
   "Ofi1": {
     "usuario": "Ofi1",
-    "password": "123ABC",
+    "password": "123abc",
     "recuerdame": true,
     "nombre": "Pedro",
     "apellidos": "Sanchez Perez",
-    "sueldo": 5000,
+    "sueldo": 5000.0,
     "departamento": "Calidad",
-    "imagen": "resources/imge_1.jpg",
+    "imagen": "resources/pf200.jpg",
     "f_nac": {
       "year": 1974,
       "mes": 3,
@@ -107,7 +107,7 @@
           "mes": 11,
           "dia": 11
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "09:20:00",
         "h_salida": "17:50:00"
       },
@@ -122,7 +122,7 @@
           "mes": 11,
           "dia": 12
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "10:00:00",
         "h_salida": "18:30:00"
       },
@@ -137,7 +137,7 @@
           "mes": 11,
           "dia": 13
         },
-        "tiempo_h": 8.3,
+        "tiempo": 0.0,
         "h_entrada": "08:40:00",
         "h_salida": "17:00:00"
       },
@@ -152,7 +152,7 @@
           "mes": 11,
           "dia": 14
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "09:20:00",
         "h_salida": "17:50:00"
       },
@@ -167,7 +167,7 @@
           "mes": 11,
           "dia": 15
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "10:00:00",
         "h_salida": "18:30:00"
       },
@@ -182,7 +182,7 @@
           "mes": 11,
           "dia": 18
         },
-        "tiempo_h": 8.3,
+        "tiempo": 0.0,
         "h_entrada": "08:40:00",
         "h_salida": "17:00:00"
       },
@@ -197,7 +197,7 @@
           "mes": 11,
           "dia": 19
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "09:20:00",
         "h_salida": "17:50:00"
       },
@@ -212,7 +212,7 @@
           "mes": 11,
           "dia": 20
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "10:00:00",
         "h_salida": "18:30:00"
       },
@@ -227,7 +227,7 @@
           "mes": 11,
           "dia": 21
         },
-        "tiempo_h": 8.3,
+        "tiempo": 0.0,
         "h_entrada": "08:40:00",
         "h_salida": "17:00:00"
       },
@@ -242,7 +242,7 @@
           "mes": 11,
           "dia": 22
         },
-        "tiempo_h": 8.5,
+        "tiempo": 0.0,
         "h_entrada": "10:00:00",
         "h_salida": "18:30:00"
       }
@@ -286,7 +286,7 @@
         },
         "act_plan": 10,
         "act_compl": 10,
-        "productividad": 1
+        "productividad": 1.0
       },
       {
         "fecha": {
@@ -346,7 +346,7 @@
         },
         "act_plan": 1,
         "act_compl": 1,
-        "productividad": 1
+        "productividad": 1.0
       }
     ]
   }
