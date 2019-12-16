@@ -10,6 +10,7 @@ public class Oficinista {
 	protected String apellidos;
 	protected double sueldo;
 	protected String departamento;
+	protected String imagen;
 	protected Fecha f_nac;
 	protected ArrayList<Pulso> pulsos = new ArrayList<Pulso>();
 	protected ArrayList<Ea> ea = new ArrayList<Ea>();
@@ -18,7 +19,9 @@ public class Oficinista {
 	public Oficinista() {
 	}
 
-	public Oficinista(String usuario, String password, boolean recuerdame, String nombre, String apellidos, double sueldo, String departamento, Fecha f_nac, ArrayList<Pulso> pulsos, ArrayList<Ea> ea, ArrayList<Productividad> productividad) {
+	public Oficinista(String usuario, String password, boolean recuerdame, String nombre, String apellidos,
+			double sueldo, String departamento, String imagen, Fecha f_nac, ArrayList<Pulso> pulsos, ArrayList<Ea> ea,
+			ArrayList<Productividad> productividad) {
 		this.usuario = usuario;
 		this.password = password;
 		this.recuerdame = recuerdame;
@@ -26,10 +29,19 @@ public class Oficinista {
 		this.apellidos = apellidos;
 		this.sueldo = sueldo;
 		this.departamento = departamento;
+		this.imagen = imagen;
 		this.f_nac = f_nac;
 		this.pulsos = pulsos;
 		this.ea = ea;
 		this.productividad = productividad;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	public String getUsuario() {

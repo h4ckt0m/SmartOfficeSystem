@@ -1,4 +1,4 @@
-package application.controllers;
+package application.controllers.usuario;
 
 import application.Main;
 import javafx.fxml.FXML;
@@ -36,7 +36,7 @@ public class ControllerListaVistaUsuario implements Initializable{
         lbProductividad.setText(String.valueOf((Main.loggedUser.getProductividad().get(ControllerVistaUsuario.i).getProductividad())*100) + "%");
         cbCompletado.setDisable(true);
         cbCompletado.setOpacity(100);
-        if(Main.loggedUser.getProductividad().get(ControllerVistaUsuario.i).getAct_compl() == Main.loggedUser.getProductividad().get(ControllerVistaUsuario.i).getAct_plan()){
+        if(Main.loggedUser.getProductividad().get(ControllerVistaUsuario.i).getAct_compl() >= Main.loggedUser.getProductividad().get(ControllerVistaUsuario.i).getAct_plan()){
             cbCompletado.setSelected(true);
         }
         else{

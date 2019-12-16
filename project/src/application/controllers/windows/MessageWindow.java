@@ -1,10 +1,9 @@
-package application.controllers;
+package application.controllers.windows;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.Main;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,16 +19,16 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class LogOutWindow{
-
-	@FXML
-	public Button aceptar;
+public class MessageWindow{
 	
-	public LogOutWindow(Stage st) {
+	@FXML
+	public Label lb1;
+
+	public MessageWindow(String s, Stage st) {
 		try {
 			
 			//SET ROOT AND CONTROLLER (THIS CLASS IS THE CONTROLLER)
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/scenes/windows/logOutWindow.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/scenes/windows/messageWindow.fxml"));
 			loader.setController(this);
 			Parent root = loader.load();
 			
@@ -40,10 +39,14 @@ public class LogOutWindow{
 			primaryStage.initOwner(st);
 			
 			//SHOW MESSAGE WINDOW
-			primaryStage.setTitle("Exit");
+			primaryStage.setTitle("Message");
 			Scene sc = new Scene(root);
 			primaryStage.setScene(sc);
-			primaryStage.show();	
+			primaryStage.show();
+			
+			//SET LABEL TEXT
+			lb1.setText(s);
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -55,15 +58,7 @@ public class LogOutWindow{
 		}
 	}
 	public void close() {
-		Stage s = (Stage) aceptar.getScene().getWindow();
+		Stage s = (Stage) lb1.getScene().getWindow();
 		s.close();
-	}
-	public void exit() {
-		Stage s = (Stage) aceptar.getScene().getWindow();
-		s.close();
-		Main.stage.setScene(Main.loginScene);
-		Main.stage.setX((Main.primScreenBounds.getWidth() - Main.stage.getWidth()) / 2);
-		Main.stage.setY((Main.primScreenBounds.getHeight() - Main.stage.getHeight()) / 2);
-		
 	}
 }

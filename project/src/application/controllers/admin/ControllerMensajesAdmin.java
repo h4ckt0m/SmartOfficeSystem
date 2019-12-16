@@ -1,4 +1,4 @@
-package application.controllers;
+package application.controllers.admin;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;

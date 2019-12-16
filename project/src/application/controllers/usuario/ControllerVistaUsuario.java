@@ -1,4 +1,4 @@
-package application.controllers;
+package application.controllers.usuario;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -11,6 +11,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -28,6 +30,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.controllers.windows.LogOutWindow;
 
 public class ControllerVistaUsuario implements Initializable {
 	 @FXML
@@ -62,6 +65,29 @@ public class ControllerVistaUsuario implements Initializable {
 	    private AnchorPane anchor;
 	    @FXML
 	    private ImageView image;
+	    
+	    //PROGRESS BARS---------------------------------------
+	    @FXML
+	    private ProgressBar pbTemp;
+	    @FXML
+	    private ProgressBar pbHum;
+	    @FXML
+	    private ProgressBar pbLum;
+	    @FXML
+	    private ProgressBar pbAire;
+	    @FXML
+	    private ProgressBar pbRuido;
+	    @FXML
+	    private Label lbTemp;
+	    @FXML
+	    private Label lbHum;
+	    @FXML
+	    private Label lbLum;
+	    @FXML
+	    private Label lbAire;
+	    @FXML
+	    private Label lbRuido;
+	    //-----------------------------------------------------
 
 	    public static int i;
     
@@ -76,7 +102,7 @@ public class ControllerVistaUsuario implements Initializable {
             try {
 
                 final int j = i;
-                nodes[i] = FXMLLoader.load(getClass().getResource("/application/scenes/listaVistaUsuario.fxml"));
+                nodes[i] = FXMLLoader.load(getClass().getResource("/application/scenes/usuario/listaVistaUsuario.fxml"));
                 //give the items some effect
 
                 nodes[i].setOnMouseEntered(event -> {
@@ -99,7 +125,33 @@ public class ControllerVistaUsuario implements Initializable {
         int month = localDate.getMonthValue();
         int day   = localDate.getDayOfMonth();
         lbFecha.setText(day + "/" + month + "/" + year);
+        try {
+			image.setImage(ControllerVistaConfiguracionUsuario.requestImage(Main.loggedUser.getUsuario()+".jpg", "perfiles"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
+        //PROGRESS BARS------------------------------------------------------------------------------------------
+        String fechaActual = "15/11/2019";
+        double temp = (double)Main.ambientales.get("Temperatura").get(fechaActual); //en grados
+        double humedad = (double)Main.ambientales.get("Humedad").get(fechaActual);  //en porcentaje
+        double lumin = (double)Main.ambientales.get("Luminosidad").get(fechaActual);  //en porcentaje
+        double aire = (double)Main.ambientales.get("Aire").get(fechaActual);  //en porcentaje de contaminacion
+        double ruido = (double)Main.ambientales.get("Ruido").get(fechaActual);  //en porcentaje
+        
+        pbTemp.setProgress(temp/100);
+        lbTemp.setText(temp+" ºC");
+        pbHum.setProgress(humedad/100);
+        lbHum.setText(humedad+" %");
+        pbLum.setProgress(lumin/100);
+        lbLum.setText(lumin+" %");
+        pbAire.setProgress(aire/100);
+        lbAire.setText(aire+" %");
+        pbRuido.setProgress(ruido/100);
+        lbRuido.setText(ruido+" %");     
+        
+        //-------------------------------------------------------------------------------------------------------
+        
         anchor.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
@@ -122,22 +174,24 @@ public class ControllerVistaUsuario implements Initializable {
             panePrincipal.toFront();
         }
         if (actionEvent.getSource() == btnHR) {
-            Pane vistaPaneHR = FXMLLoader.load(getClass().getResource("/application/scenes/vistaHR.fxml"));
+            Pane vistaPaneHR = FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaHR.fxml"));
             paneHR.getChildren().add(vistaPaneHR);
+            paneRendimiento.toBack(); //prevents overlapping
             paneHR.toFront();
         }
         if (actionEvent.getSource() == btnRendimiento) {
-            Pane vistaPaneRendimiento = FXMLLoader.load(getClass().getResource("/application/scenes/vistaRendimiento.fxml"));
+            Pane vistaPaneRendimiento = FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaRendimiento.fxml"));
             paneRendimiento.getChildren().add(vistaPaneRendimiento);
+            paneHR.toBack(); //prevents overlapping
             paneRendimiento.toFront();
         }
         if(actionEvent.getSource() == btnPerfil){
-            Pane vistaPanePerfil = FXMLLoader.load(getClass().getResource("/application/scenes/vistaPerfilUsuario.fxml"));
+            Pane vistaPanePerfil = FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaPerfilUsuario.fxml"));
             panePerfil.getChildren().add(vistaPanePerfil);
             panePerfil.toFront();
         }
         if (actionEvent.getSource() == btnConfiguracion){
-            Pane vistaPaneConfi = FXMLLoader.load(getClass().getResource("/application/scenes/vistaConfiguracionUsuario.fxml"));
+            Pane vistaPaneConfi = FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaConfiguracionUsuario.fxml"));
             paneConfi.getChildren().add(vistaPaneConfi);
             paneConfi.toFront();
         }
@@ -145,7 +199,7 @@ public class ControllerVistaUsuario implements Initializable {
     }
     
    public void openChat() throws IOException {
-	   Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatUsuario.fxml")));
+	   Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaChatUsuario.fxml")));
 	   Stage primaryStage = new Stage();
 	   primaryStage.initStyle(StageStyle.UNDECORATED);
 	   primaryStage.setScene(chatUScene);

@@ -23,8 +23,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import application.controllers.ExitWindow;
-import application.controllers.MessageWindow;
+import application.controllers.windows.ExitWindow;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -46,6 +45,7 @@ public class Main extends Application {
 	public static TreeMap<String, Object> ordenatedMessages;
 	public static TreeMap<String, JSONObject> admin = new TreeMap<String, JSONObject>();
 	public static TreeMap <String, Oficinista> office;
+	public static TreeMap<String, JSONObject> ambientales;
 	public static Oficinista loggedUser;
 	public static JSONObject loggedAdmin;
 	
@@ -56,10 +56,15 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
 		Type oficinistaHMType = new TypeToken<TreeMap<String,Oficinista>>(){}.getType();
-		office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
+		//office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
+		office = gson.fromJson(requestData("project/src/application/database/document","ramaGonzalo"),oficinistaHMType);
        
 		Type adminHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
        admin = gson.fromJson(requestData("project/src/application/database/admin","master"), adminHMType);
+       
+       Type ambientHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
+       ambientales = gson.fromJson(requestData("project/src/application/database/ambientales","master"), ambientHMType);
+       //System.out.println(gson.fromJson(ambientales.get("Luminosidad").toString(),TreeMap.class));
        
        	loginScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/login.fxml")));
        	//chatAScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
@@ -67,46 +72,10 @@ public class Main extends Application {
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setScene(loginScene);
 		primaryStage.show();
-		 
-		//System.out.println(requestData("Ofi1"));
-		// mensajes = (JSONObject) parser.parse(requestData("mensajes"));
-
-		//String converJsonName = "mensajesOfi1";
-
-		/*
-		 * TimerTask timerTask = new TimerTask() { public void run() { try { data =
-		 * requestData(converJsonName); ordenatedMessages = gson.fromJson(data,
-		 * TreeMap.class); printTree(); } catch (Exception e) { e.printStackTrace(); } }
-		 * };
-		 * 
-		 * // Aquí se pone en marcha el timer cada segundo. Timer timer = new Timer();
-		 * // Dentro de 0 milisegundos avísame cada 1000 milisegundos
-		 * timer.scheduleAtFixedRate(timerTask, 0, 5000);
-		 */
-
-		/*String data = requestData("Ofi1");
-		ordenatedMessages = gson.fromJson(data, TreeMap.class);
-		printTree();
-		
-		Scanner in = new Scanner(System.in);
-		String message = in.nextLine();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		// System.out.println(dtf.format(now));
-		ordenatedMessages.put(dtf.format(now), "-Ofi: " + message);
-		System.out.println(writeCommit(gson.toJson(ordenatedMessages), "Ofi1"));
-		System.out.println(updateData("commitFile.json", "Ofi1"));
-		printTree();*/
 	}
 
 	public static void main(String[] args) {
 		launch(args);
-	}
-
-	public void printTree() {
-		ordenatedMessages.keySet().forEach(key -> {
-			System.out.println(ordenatedMessages.get(key) + "\t\t\t\t(Sent at:" + key + ")");
-		});
 	}
 
 	public static String requestData(String name, String branch) throws Exception {
@@ -146,7 +115,7 @@ public class Main extends Application {
 
 	public static String writeCommit(String normalContent, String name, String branch) throws Exception {
 		FileWriter writer = new FileWriter("commitFile.json");
-		String commitMessage = "message json file updated";
+		String commitMessage = "json file updated";
 		String committerName = "Gonzalo Alcaide";
 		String committerEmail = "gonzalo.alcaide10@gmail.com";
 		String codedContent = Base64.getEncoder().encodeToString(normalContent.getBytes());

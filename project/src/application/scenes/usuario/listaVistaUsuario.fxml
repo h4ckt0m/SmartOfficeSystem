@@ -6,7 +6,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="746.0" spacing="60.0" style="-fx-background-color: #3B3292; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerListaVistaUsuario">
+<HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="746.0" spacing="60.0" style="-fx-background-color: #3B3292; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.usuario.ControllerListaVistaUsuario">
     <children>
         <Label fx:id="lbFecha" prefHeight="17.0" prefWidth="69.0" text="13/11/2019" textFill="#b7c3d7">
          <HBox.margin>

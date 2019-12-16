@@ -1,4 +1,4 @@
-package application.controllers;
+package application.controllers.usuario;
 
 import application.Main;
 import javafx.fxml.FXML;
@@ -34,7 +34,7 @@ public class ControllerVistaPerfilUsuario implements Initializable {
         lbApellidos.setText(Main.loggedUser.getApellidos());
         lbFecNac.setText(Main.loggedUser.getF_nac().toString());
         lbDepart.setText(Main.loggedUser.getDepartamento());
-        lbSueldo.setText(String.valueOf(Main.loggedUser.getSueldo()) + " â‚¬");
+        lbSueldo.setText(String.valueOf(Main.loggedUser.getSueldo()) + " € mensuales");
 
         double hrMedio = 0;
         double prMedia = 0;

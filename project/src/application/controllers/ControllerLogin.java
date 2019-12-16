@@ -1,6 +1,7 @@
 package application.controllers;
 
 import application.*;
+import application.controllers.windows.MessageWindow;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -327,13 +328,13 @@ public class ControllerLogin implements Initializable {
 						"ACCESS GRANTED\nLogin successfully completed\nWelcome Administrator", Main.stage);
 				Main.loggedAdmin = Main.admin.get(user);
 				try {
-					Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
+					Scene chatUScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/admin/vistaChatAdmin.fxml")));
 					Stage primaryStage = new Stage();
 					primaryStage.initStyle(StageStyle.UNDECORATED);
 					primaryStage.setScene(chatUScene);
 					primaryStage.show();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+					// HOLA GONSI DEL FUTURO, SI LEES ESTO PROBABLEMENTE SEAS BOBO. BUENAS NOCHES.
 					e.printStackTrace();
 				}
 				
@@ -347,7 +348,7 @@ public class ControllerLogin implements Initializable {
 						"ACCESS GRANTED\nLogin successfully completed\nWelcome office worker", Main.stage);
 					Main.loggedUser = Main.office.get(user);
 					try {
-						Scene usuarioScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaUsuario.fxml")));
+						Scene usuarioScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/usuario/vistaUsuario.fxml")));
 						Main.stage.setScene(usuarioScene);
 						Main.stage.setX((Main.primScreenBounds.getWidth() - Main.stage.getWidth()) / 2);
 						Main.stage.setY((Main.primScreenBounds.getHeight() - Main.stage.getHeight()) / 2);

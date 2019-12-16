@@ -1,4 +1,4 @@
-package application.controllers;
+package application.controllers.windows;
 
 import java.io.IOException;
 import java.net.URL;
