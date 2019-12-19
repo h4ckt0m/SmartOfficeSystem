@@ -37,9 +37,17 @@ public class ControllerVistaAdmin implements Initializable {
     @FXML
     private Pane paneRendimiento;
     @FXML
-    private Pane panePerfil;
-    @FXML
     private Pane paneConfi;
+    @FXML
+    private Pane paneCalAire;
+    @FXML
+    private Pane paneTemperatura;
+    @FXML
+    private Pane paneHumedad;
+    @FXML
+    private Pane paneLuminosidad;
+    @FXML
+    private Pane paneRuido;
     @FXML
     private Button btnHome;
     @FXML
@@ -62,7 +70,7 @@ public class ControllerVistaAdmin implements Initializable {
     private ImageView image;
 
     public static int i;
-
+    public static int selectAmb;
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -114,24 +122,42 @@ public class ControllerVistaAdmin implements Initializable {
 
     }
 
-    public void handleClicks(ActionEvent actionEvent){
+    public void handleClicks(ActionEvent actionEvent) throws IOException { //Gestion de los botones condiciones ambientales
         if (actionEvent.getSource() == btnHome){
-
-        }
-        else if(actionEvent.getSource() == btnConfiguracion){ //Cambiar los demas
-
+            panePrincipal.toFront();
         }
         else if(actionEvent.getSource() == btnConfiguracion){
-
+            //to do
         }
-        else if(actionEvent.getSource() == btnConfiguracion){
-
+        else if(actionEvent.getSource() == btnTemperatura){
+            selectAmb = 1;
+            Pane vistaPaneTemp = FXMLLoader.load(getClass().getResource("/application/scenes/ambientalesAdmin.fxml"));
+            paneTemperatura.getChildren().add(vistaPaneTemp);
+            paneTemperatura.toFront();
         }
-        else if(actionEvent.getSource() == btnConfiguracion){
-
+        else if(actionEvent.getSource() == btnHumedad){
+            selectAmb = 2;
+            Pane vistaPaneHum = FXMLLoader.load(getClass().getResource("/application/scenes/ambientalesAdmin.fxml"));
+            paneHumedad.getChildren().add(vistaPaneHum);
+            paneHumedad.toFront();
         }
-        else if(actionEvent.getSource() == btnConfiguracion){
-
+        else if(actionEvent.getSource() == btnLumin){
+            selectAmb = 3;
+            Pane vistaPaneLum = FXMLLoader.load(getClass().getResource("/application/scenes/ambientalesAdmin.fxml"));
+            paneLuminosidad.getChildren().add(vistaPaneLum);
+            paneLuminosidad.toFront();
+        }
+        else if(actionEvent.getSource() == btnCalAire){
+            selectAmb = 4;
+            Pane vistaPaneCal = FXMLLoader.load(getClass().getResource("/application/scenes/ambientalesAdmin.fxml"));
+            paneCalAire.getChildren().add(vistaPaneCal);
+            paneCalAire.toFront();
+        }
+        else if(actionEvent.getSource() == btnRuido){
+            selectAmb = 5;
+            Pane vistaPaneRuido = FXMLLoader.load(getClass().getResource("/application/scenes/ambientalesAdmin.fxml"));
+            paneRuido.getChildren().add(vistaPaneRuido);
+            paneRuido.toFront();
         }
     }
 

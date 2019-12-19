@@ -46,6 +46,7 @@ public class Main extends Application {
 	public static TreeMap<String, Object> ordenatedMessages;
 	public static TreeMap<String, JSONObject> admin = new TreeMap<String, JSONObject>();
 	public static TreeMap <String, Oficinista> office;
+	public static TreeMap<String, JSONObject> ambientales;
 	public static Oficinista loggedUser;
 	public static JSONObject loggedAdmin;
 	
@@ -54,12 +55,13 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Type ambientHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
+		ambientales = gson.fromJson(requestData("project/src/application/database/ambientales","master"), ambientHMType);
 		stage = primaryStage;
 		Type oficinistaHMType = new TypeToken<TreeMap<String,Oficinista>>(){}.getType();
 		office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
 		Type adminHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
        	admin = gson.fromJson(requestData("project/src/application/database/admin","master"), adminHMType);
-       
        	loginScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/login.fxml")));
        	//chatAScene = new Scene(FXMLLoader.load(getClass().getResource("/application/scenes/vistaChatAdmin.fxml")));
        	
@@ -98,8 +100,7 @@ public class Main extends Application {
 		printTree();*/
 	}
 
-	public static void main(String[] args) {
-		launch(args);
+	public static void main(String[] args) { launch(args);
 	}
 
 	public void printTree() {
