@@ -706,7 +706,7 @@
     "nombre": "Maria",
     "apellidos": "Suarez Franco",
     "sueldo": 2500.0,
-    "departamento": "Produccion",
+    "departamento": "Desarrollo",
     "f_nac": {
       "year": 1987,
       "mes": 6,
@@ -1056,7 +1056,7 @@
     "nombre": "Carlos",
     "apellidos": "Martinez Martinez",
     "sueldo": 2500.0,
-    "departamento": "Produccion",
+    "departamento": "Calidad",
     "f_nac": {
       "year": 1984,
       "mes": 8,
@@ -1406,7 +1406,7 @@
     "nombre": "Abdul",
     "apellidos": "Suarez Hammal",
     "sueldo": 2500.0,
-    "departamento": "Produccion",
+    "departamento": "Financiero",
     "f_nac": {
       "year": 1985,
       "mes": 1,
@@ -1756,7 +1756,7 @@
     "nombre": "Sofia",
     "apellidos": "Duarez Fernandez",
     "sueldo": 2500.0,
-    "departamento": "Produccion",
+    "departamento": "Desarrollo",
     "f_nac": {
       "year": 1983,
       "mes": 9,
