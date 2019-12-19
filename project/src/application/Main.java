@@ -57,7 +57,7 @@ public class Main extends Application {
 		stage = primaryStage;
 		Type oficinistaHMType = new TypeToken<TreeMap<String,Oficinista>>(){}.getType();
 		//office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
-		office = gson.fromJson(requestData("project/src/application/database/document","ramaGonzalo"),oficinistaHMType);
+		office = gson.fromJson(requestData("project/src/application/database/office","master"),oficinistaHMType);
        
 		Type adminHMType = new TypeToken<TreeMap<String,JSONObject>>(){}.getType();
        admin = gson.fromJson(requestData("project/src/application/database/admin","master"), adminHMType);

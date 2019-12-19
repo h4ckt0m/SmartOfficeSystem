@@ -49,7 +49,6 @@ public class ControllerVistaConfiguracionUsuario implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	fileChooser.setInitialDirectory(new File("src/resources"));
-    	imgPath = Main.loggedUser.getImagen();
     	try {
 			img.setImage(ControllerVistaConfiguracionUsuario.requestImage(Main.loggedUser.getUsuario()+".jpg", "perfiles"));
 		} catch (Exception e) { 
