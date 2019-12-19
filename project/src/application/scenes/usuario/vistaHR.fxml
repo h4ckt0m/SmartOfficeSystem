@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.usuario.ControllerVistaHR">
+   <children>
+      <LineChart fx:id="lineChartHR" layoutX="21.0" layoutY="14.0" legendVisible="false" prefHeight="465.0" prefWidth="705.0" title="Pulso Cardiaco">
+        <xAxis>
+          <CategoryAxis label="Fecha" side="BOTTOM">
+               <tickLabelFont>
+                  <Font name="System Bold" size="18.0" />
+               </tickLabelFont></CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Pulso Cardiaco Medio (ppm)" side="LEFT">
+               <tickLabelFont>
+                  <Font name="System Bold" size="18.0" />
+               </tickLabelFont></NumberAxis>
+        </yAxis>
+      </LineChart>
+      <DatePicker fx:id="inicio" layoutX="197.0" layoutY="479.0" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css" />
+      <DatePicker fx:id="fin" layoutX="458.0" layoutY="479.0" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css" />
+      <Label layoutX="133.0" layoutY="483.0" prefHeight="17.0" prefWidth="40.0" text="Inicio:" />
+      <Label layoutX="412.0" layoutY="483.0" prefHeight="17.0" prefWidth="40.0" text="Final:" />
+      <Button layoutX="659.0" layoutY="479.0" mnemonicParsing="false" onAction="#dibujar" styleClass="button1" stylesheets="@../StyleSheets/StyleVistaUsario.css" text="Consultar" />
+   </children>
+</Pane>

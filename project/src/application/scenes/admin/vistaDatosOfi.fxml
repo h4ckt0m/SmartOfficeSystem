@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" maxHeight="649.0" maxWidth="869.0" prefHeight="649.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="38.0" prefWidth="869.0" style="-fx-background-color: #3B3292 #3B3292;">
+         <children>
+            <Button layoutX="817.0" layoutY="3.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="30.0" styleClass="button1" stylesheets="@../StyleSheets/StyleVistaUsario.css">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons8_close_window_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></Pane>
+      <Pane layoutY="38.0" prefHeight="611.0" prefWidth="330.0" style="-fx-background-color: #1BB8FF;">
+         <children>
+            <VBox prefHeight="609.0" prefWidth="129.0" spacing="80.0">
+               <children>
+                  <Label text="Usuario:" />
+                  <Label text="Nombre:" />
+                  <Label text="Apellidos:" />
+                  <Label text="Fecha de Nacimiento:" />
+                  <Label text="Sueldo:" />
+                  <Label text="Departamento:" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="50.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="129.0" prefHeight="609.0" prefWidth="203.0" spacing="80.0">
+               <children>
+                  <Label fx:id="lbUsuario" prefHeight="17.0" prefWidth="174.0" />
+                  <Label fx:id="lbNombre" prefHeight="17.0" prefWidth="172.0" />
+                  <Label fx:id="lbApellidos" prefHeight="17.0" prefWidth="173.0" />
+                  <Label fx:id="lbFechaNacimiento" prefHeight="17.0" prefWidth="178.0" />
+                  <Label fx:id="lbSueldo" prefHeight="17.0" prefWidth="180.0" />
+                  <Label fx:id="lbDepartamento" prefHeight="17.0" prefWidth="173.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="330.0" layoutY="38.0" prefHeight="92.0" prefWidth="539.0" style="-fx-background-color: #1182F0;">
+         <children>
+            <Button fx:id="btnHR" layoutX="84.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleClicks" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css" text="HR">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons8_heart_with_pulse_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEA" layoutX="234.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="92.0" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css" text="EA">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons8_time_machine_200px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPR" layoutX="414.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleClicks" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css" text="PR">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons8_timesheet_128px_2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <StackPane layoutX="330.0" layoutY="129.0" prefHeight="520.0" prefWidth="539.0">
+         <children>
+            <Pane fx:id="paneEA" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <LineChart fx:id="lcEA" prefHeight="518.0" prefWidth="539.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
+                     </yAxis>
+                  </LineChart>
+               </children></Pane>
+            <Pane fx:id="panePR" prefHeight="200.0" prefWidth="516.0">
+               <children>
+                  <LineChart fx:id="lcPR" prefHeight="518.0" prefWidth="539.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
+                     </yAxis>
+                  </LineChart>
+               </children></Pane>
+            <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
+               <children>
+                  <LineChart fx:id="lcHR" prefHeight="518.0" prefWidth="539.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></CategoryAxis>
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                           <tickLabelFont>
+                              <Font size="14.0" />
+                           </tickLabelFont></NumberAxis>
+                    </yAxis>
+                  </LineChart>
+               </children></Pane>
+            <Pane fx:id="panePDatos" prefHeight="200.0" prefWidth="539.0" style="-fx-background-color: #3B3292 #3B3292;" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

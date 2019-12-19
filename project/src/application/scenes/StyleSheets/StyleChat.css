@@ -1,0 +1,19 @@
+.button{
+    -fx-background-color : linear-gradient(to right, #36d1dc, #5b86e5);
+}
+.comboBox{
+    -fx-background-color : linear-gradient(to right, #fceabb, #f8b500);
+}
+
+.button:hover{
+    -fx-background-color : linear-gradient(to right, #a8ff78, #78ffd6);
+}
+.comboBox:hover{
+    -fx-background-color : linear-gradient(to right, #a8ff78, #78ffd6);
+}
+.button:pressed{
+    -fx-background-color : #A1A1A1;
+}
+.comboBox:pressed{
+    -fx-background-color : linear-gradient(to right, #a8ff78, #78ffd6);
+}

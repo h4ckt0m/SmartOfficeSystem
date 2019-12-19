@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="546.0" prefWidth="746.0" style="-fx-background-color: #3B3292;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.ControllerAmbientalesAdmin">
+   <children>
+      <LineChart fx:id="ambientAdmin" layoutY="-3.0" prefHeight="546.0" prefWidth="746.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+               <tickLabelFont>
+                  <Font size="18.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" tickLabelFill="WHITE">
+               <tickLabelFont>
+                  <Font size="18.0" />
+               </tickLabelFont>
+            </NumberAxis>
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>
