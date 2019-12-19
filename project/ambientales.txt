@@ -1,0 +1,5 @@
+40       luminosidad
+30.4     temperatura
+40       humedad
+65       ruido
+46       aire
