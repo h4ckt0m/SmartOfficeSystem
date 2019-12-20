@@ -30,7 +30,7 @@
          </children></Pane>
       <Pane layoutY="38.0" prefHeight="611.0" prefWidth="330.0" style="-fx-background-color: #1BB8FF;">
          <children>
-            <VBox prefHeight="609.0" prefWidth="129.0" spacing="80.0">
+            <VBox layoutY="166.0" prefHeight="448.0" prefWidth="129.0" spacing="50.0">
                <children>
                   <Label text="Usuario:" />
                   <Label text="Nombre:" />
@@ -43,7 +43,7 @@
                   <Insets left="10.0" top="50.0" />
                </padding>
             </VBox>
-            <VBox layoutX="129.0" prefHeight="609.0" prefWidth="203.0" spacing="80.0">
+            <VBox layoutX="129.0" layoutY="166.0" prefHeight="448.0" prefWidth="203.0" spacing="50.0">
                <children>
                   <Label fx:id="lbUsuario" prefHeight="17.0" prefWidth="174.0" />
                   <Label fx:id="lbNombre" prefHeight="17.0" prefWidth="172.0" />
@@ -56,6 +56,7 @@
                   <Insets left="10.0" top="50.0" />
                </padding>
             </VBox>
+            <ImageView fx:id="profileImage" fitHeight="130.0" fitWidth="130.0" layoutX="100.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
       <Pane layoutX="330.0" layoutY="38.0" prefHeight="92.0" prefWidth="539.0" style="-fx-background-color: #1182F0;">

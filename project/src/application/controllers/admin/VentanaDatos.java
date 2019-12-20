@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import application.Oficinista;
+import application.controllers.usuario.ControllerVistaConfiguracionUsuario;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,6 +21,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -65,6 +67,8 @@ public class VentanaDatos{
 	LineChart<String, Number> lcEA; // Pillar tiempo en hora para la x
 	@FXML
 	LineChart<String, Number> lcPR;
+	@FXML
+	ImageView profileImage;
 
 	private Oficinista ofi;
 
@@ -101,6 +105,11 @@ public class VentanaDatos{
 			lbSueldo.setText(String.valueOf(this.ofi.getSueldo()));
 			lbDepartamento.setText(this.ofi.getDepartamento());
 			
+			try {
+				profileImage.setImage(ControllerVistaConfiguracionUsuario.requestImage(this.ofi.getUsuario()+".jpg", "perfiles"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();

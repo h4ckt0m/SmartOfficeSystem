@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -31,11 +30,6 @@
       </Label>
       <TextField fx:id="userField" layoutX="302.0" layoutY="294.0" />
       <PasswordField fx:id="pField" layoutX="302.0" layoutY="339.0" />
-      <CheckBox fx:id="recuerda" layoutX="325.0" layoutY="378.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="103.0" text="Recuérdame" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </CheckBox>
       <Button fx:id="entrar" layoutX="342.0" layoutY="423.0" mnemonicParsing="false" onAction="#checkUserPassword" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #4e54c8;" text="Entrar" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -55,6 +49,15 @@
          <tooltip>
             <Tooltip text="PARTY MODE" />
          </tooltip>
+      </Button>
+      <Button layoutX="355.0" layoutY="374.0" mnemonicParsing="false" onAction="#goToWeb" prefHeight="25.0" prefWidth="25.0" styleClass="button4" stylesheets="@StyleSheets/StyleVistaUsario.css">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/internet_60px.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

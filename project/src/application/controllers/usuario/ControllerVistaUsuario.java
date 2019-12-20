@@ -136,25 +136,6 @@ public class ControllerVistaUsuario implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-        //PROGRESS BARS------------------------------------------------------------------------------------------
-        /*String fechaActual = "15/11/2019";
-        double temp = (double)Main.ambientales.get("Temperatura").get(fechaActual); //en grados
-        double humedad = (double)Main.ambientales.get("Humedad").get(fechaActual);  //en porcentaje
-        double lumin = (double)Main.ambientales.get("Luminosidad").get(fechaActual);  //en porcentaje
-        double aire = (double)Main.ambientales.get("Aire").get(fechaActual);  //en porcentaje de contaminacion
-        double ruido = (double)Main.ambientales.get("Ruido").get(fechaActual);  //en porcentaje
-       
-        pbTemp.setProgress(temp/100);
-        lbTemp.setText(temp+" ºC");
-        pbHum.setProgress(humedad/100);
-        lbHum.setText(humedad+" %");
-        pbLum.setProgress(lumin/100);
-        lbLum.setText(lumin+" %");
-        pbAire.setProgress(aire/100);
-        lbAire.setText(aire+" %");
-        pbRuido.setProgress(ruido/100);
-        lbRuido.setText(ruido+" %");*/
         
         TimerTask timerTask = new TimerTask() {
 			public void run() {

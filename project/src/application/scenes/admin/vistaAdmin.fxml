@@ -70,7 +70,7 @@
             <Line endX="166.0" layoutX="177.0" layoutY="257.0" startX="-157.0" stroke="WHITE" />
             <Pane layoutY="55.0" prefHeight="131.0" prefWidth="364.0" style="-fx-background-color: #1BB8FF;">
                <children>
-                  <ImageView fitHeight="131.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profileImg" fitHeight="131.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/imge_1.jpg" />
                      </image>
@@ -132,34 +132,34 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ProgressBar layoutX="82.0" layoutY="290.0" prefWidth="200.0" progress="0.67" />
-            <ProgressBar layoutX="82.0" layoutY="353.0" prefWidth="200.0" progress="0.46" />
-            <ProgressBar layoutX="82.0" layoutY="412.0" prefWidth="200.0" progress="0.84" />
-            <ProgressBar layoutX="82.0" layoutY="477.0" prefWidth="200.0" progress="0.12" />
-            <ProgressBar layoutX="82.0" layoutY="539.0" prefWidth="200.0" progress="1.0" />
-            <Label layoutX="291.0" layoutY="282.0" prefHeight="33.0" prefWidth="42.0" text="30ºC" textFill="#eeeeee">
+            <ProgressBar fx:id="pbTemp" layoutX="82.0" layoutY="290.0" prefWidth="200.0" progress="0.67" />
+            <ProgressBar fx:id="pbHum" layoutX="82.0" layoutY="353.0" prefWidth="200.0" progress="0.46" />
+            <ProgressBar fx:id="pbLum" layoutX="82.0" layoutY="412.0" prefWidth="200.0" progress="0.84" />
+            <ProgressBar fx:id="pbAire" layoutX="82.0" layoutY="477.0" prefWidth="200.0" progress="0.12" />
+            <ProgressBar fx:id="pbRuido" layoutX="82.0" layoutY="539.0" prefWidth="200.0" progress="1.0" />
+            <Label fx:id="lbTemp" layoutX="291.0" layoutY="281.0" prefHeight="33.0" prefWidth="59.0" text="ºC" textFill="#eeeeee">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="346.0" prefHeight="33.0" prefWidth="42.0" text="\%" textFill="#eeeeee">
+            <Label fx:id="lbHum" layoutX="291.0" layoutY="345.0" prefHeight="33.0" prefWidth="58.0" text="\%" textFill="#eeeeee">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="405.0" prefHeight="33.0" prefWidth="42.0" text="\%" textFill="#eeeeee">
+            <Label fx:id="lbLum" layoutX="291.0" layoutY="404.0" prefHeight="33.0" prefWidth="58.0" text="\%" textFill="#eeeeee">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="470.0" prefHeight="33.0" prefWidth="42.0" text="\%" textFill="#eeeeee">
+            <Label fx:id="lbAire" layoutX="291.0" layoutY="469.0" prefHeight="33.0" prefWidth="63.0" text="\%" textFill="#eeeeee">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="532.0" prefHeight="33.0" prefWidth="42.0" text="\%" textFill="#eeeeee">
+            <Label fx:id="lbRuido" layoutX="291.0" layoutY="531.0" prefHeight="33.0" prefWidth="63.0" text="\%" textFill="#eeeeee">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
             <Button layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" onAction="#exit" prefHeight="18.0" prefWidth="25.0" styleClass="button2" stylesheets="@../StyleSheets/StyleVistaUsario.css">

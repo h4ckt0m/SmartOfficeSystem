@@ -1,7 +1,9 @@
 package application.controllers.admin;
 
 import application.Main;
+import application.controllers.usuario.ControllerVistaConfiguracionUsuario;
 import application.controllers.windows.LogOutWindow;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -19,12 +22,16 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ControllerVistaAdmin implements Initializable {
     @FXML
@@ -69,11 +76,38 @@ public class ControllerVistaAdmin implements Initializable {
     private Label lbFecha;
     @FXML
     private ImageView image;
+    @FXML
+    private ImageView profileImg;
 
+  //PROGRESS BARS---------------------------------------
+    @FXML
+    private ProgressBar pbTemp;
+    @FXML
+    private ProgressBar pbHum;
+    @FXML
+    private ProgressBar pbLum;
+    @FXML
+    private ProgressBar pbAire;
+    @FXML
+    private ProgressBar pbRuido;
+    @FXML
+    private Label lbTemp;
+    @FXML
+    private Label lbHum;
+    @FXML
+    private Label lbLum;
+    @FXML
+    private Label lbAire;
+    @FXML
+    private Label lbRuido;
+    //-----------------------------------------------------
+    
+    
     public static int i;
     public static int selectAmb;
     private double xOffset = 0;
     private double yOffset = 0;
+    public FileReader fr;
 
 
     @Override
@@ -120,7 +154,25 @@ public class ControllerVistaAdmin implements Initializable {
                 Main.stage.setY(event.getScreenY() + yOffset);
             }
         });
-
+        
+        
+        TimerTask timerTask = new TimerTask() {
+			public void run() {
+				// Aquí el código que queremos ejecutar.
+				Platform.runLater(() -> {
+					updateAmbient();
+				});
+			}
+		};
+		Timer timer = new Timer();
+		// Dentro de 0 milisegundos avísame cada 10000 milisegundos
+		timer.scheduleAtFixedRate(timerTask, 0, 10000);
+		
+		 try {
+			 profileImg.setImage(ControllerVistaConfiguracionUsuario.requestImage(Main.loggedAdmin.get("usuario")+".jpg", "perfiles"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     }
 
     public void handleClicks(ActionEvent actionEvent) throws IOException { //Gestion de los botones condiciones ambientales
@@ -169,6 +221,58 @@ public class ControllerVistaAdmin implements Initializable {
         primaryStage.setScene(chatUScene);
         primaryStage.show();
     }
+    
+    public void updateAmbient() {
+ 	   double lumin = 0;  //en porcentaje
+ 	   double temp = 0; //en grados
+        double humedad = 0;  //en porcentaje
+        double ruido = 0;  //en porcentaje
+        double aire = 0;  //en porcentaje de contaminacion
+ 	   
+ 	   try {
+ 		fr=new FileReader("ambientales.txt");
+ 		String cadena;
+ 		int counter = 0;
+ 	    BufferedReader b = new BufferedReader(fr);
+ 	      while((cadena = b.readLine())!=null) {
+ 	    	  switch(counter){
+ 	    	  case 0:
+ 	    		  lumin = Double.parseDouble(cadena.substring(0,5));
+ 	    		  break;
+ 	    	  case 1:
+ 	    		  temp = Double.parseDouble(cadena.substring(0,5));
+ 	    		  break;
+ 	    	  case 2:
+ 	    		  humedad = Double.parseDouble(cadena.substring(0,5));
+ 	    		  break;
+ 	    	  case 3:
+ 	    		  ruido = Double.parseDouble(cadena.substring(0,5));
+ 	    		  break;
+ 	    	  case 4:
+ 	    		  aire = Double.parseDouble(cadena.substring(0,5));
+ 	    		  break;
+ 	    	  }
+ 	    	  counter++;
+ 	      }
+ 	    b.close();
+ 		fr.close();
+ 	} catch (Exception e) {
+ 		e.printStackTrace();
+ 	}
+ 	   pbTemp.setProgress(temp/100);
+        lbTemp.setText(temp+" ºC");
+        pbHum.setProgress(humedad/100);
+        lbHum.setText(humedad+" %");
+        pbLum.setProgress(lumin/100);
+        lbLum.setText(lumin+" %");
+        pbAire.setProgress(aire/100);
+        lbAire.setText(aire+" %");
+        pbRuido.setProgress(ruido/100);
+        lbRuido.setText(ruido+" %");
+ 	   
+    }
+    
+    
     public void logOut() {
         LogOutWindow l = new LogOutWindow(Main.stage);
     }
