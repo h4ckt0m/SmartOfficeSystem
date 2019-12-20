@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Oficinista {
 	protected String usuario;
 	protected String password;
-	protected boolean recuerdame;
 	protected String nombre;
 	protected String apellidos;
 	protected double sueldo;
@@ -18,12 +17,11 @@ public class Oficinista {
 	public Oficinista() {
 	}
 
-	public Oficinista(String usuario, String password, boolean recuerdame, String nombre, String apellidos,
+	public Oficinista(String usuario, String password, String nombre, String apellidos,
 			double sueldo, String departamento, Fecha f_nac, ArrayList<Pulso> pulsos, ArrayList<Ea> ea,
 			ArrayList<Productividad> productividad) {
 		this.usuario = usuario;
 		this.password = password;
-		this.recuerdame = recuerdame;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.sueldo = sueldo;
@@ -48,14 +46,6 @@ public class Oficinista {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public boolean isRecuerdame() {
-		return recuerdame;
-	}
-
-	public void setRecuerdame(boolean recuerdame) {
-		this.recuerdame = recuerdame;
 	}
 
 	public String getNombre() {
