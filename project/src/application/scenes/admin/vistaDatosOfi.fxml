@@ -94,15 +94,15 @@
          <children>
             <Pane fx:id="paneEA" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="lcEA" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcEA" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                        <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></CategoryAxis>
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                        <NumberAxis animated="false" side="LEFT" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></NumberAxis>
@@ -111,15 +111,15 @@
                </children></Pane>
             <Pane fx:id="panePR" prefHeight="200.0" prefWidth="516.0">
                <children>
-                  <LineChart fx:id="lcPR" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcPR" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                        <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></CategoryAxis>
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                        <NumberAxis animated="false" side="LEFT" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></NumberAxis>
@@ -128,15 +128,15 @@
                </children></Pane>
             <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
                <children>
-                  <LineChart fx:id="lcHR" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcHR" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" tickLabelFill="WHITE">
+                      <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></CategoryAxis>
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" tickLabelFill="WHITE">
+                      <NumberAxis animated="false" side="LEFT" tickLabelFill="WHITE">
                            <tickLabelFont>
                               <Font size="14.0" />
                            </tickLabelFont></NumberAxis>

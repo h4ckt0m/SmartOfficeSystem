@@ -13,13 +13,13 @@
    <children>
       <LineChart fx:id="lineChartRendimiento" layoutX="21.0" layoutY="14.0" legendVisible="false" prefHeight="465.0" prefWidth="705.0" title="Rendimiento">
         <xAxis>
-          <CategoryAxis label="Fecha" side="BOTTOM">
+          <CategoryAxis animated="false" label="Fecha" side="BOTTOM">
                <tickLabelFont>
                   <Font name="System Bold" size="18.0" />
                </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
-          <NumberAxis label="Productividad (%)" side="LEFT">
+          <NumberAxis animated="false" label="Productividad (%)" side="LEFT">
                <tickLabelFont>
                   <Font name="System Bold" size="18.0" />
                </tickLabelFont></NumberAxis>

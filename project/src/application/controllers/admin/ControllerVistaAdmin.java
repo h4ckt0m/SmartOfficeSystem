@@ -230,7 +230,7 @@ public class ControllerVistaAdmin implements Initializable {
         double aire = 0;  //en porcentaje de contaminacion
  	   
  	   try {
- 		fr=new FileReader("ambientales.txt");
+ 		fr=new FileReader("project/ambientales.txt");
  		String cadena;
  		int counter = 0;
  	    BufferedReader b = new BufferedReader(fr);

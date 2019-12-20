@@ -13,13 +13,13 @@
    <children>
       <LineChart fx:id="lineChartHR" layoutX="21.0" layoutY="14.0" legendVisible="false" prefHeight="465.0" prefWidth="705.0" title="Pulso Cardiaco">
         <xAxis>
-          <CategoryAxis label="Fecha" side="BOTTOM">
+          <CategoryAxis animated="false" label="Fecha" side="BOTTOM">
                <tickLabelFont>
                   <Font name="System Bold" size="18.0" />
                </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
-          <NumberAxis label="Pulso Cardiaco Medio (ppm)" side="LEFT">
+          <NumberAxis animated="false" label="Pulso Cardiaco Medio (ppm)" side="LEFT">
                <tickLabelFont>
                   <Font name="System Bold" size="18.0" />
                </tickLabelFont></NumberAxis>

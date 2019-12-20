@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
+import javafx.scene.paint.Color;
 import org.json.simple.JSONObject;
 
 import java.lang.reflect.Type;
@@ -32,7 +33,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
                 {
                     Number keyvalue = (Number) temperaturas.get(keyStr);
                     series.getData().add(new XYChart.Data<String, Number>((String) keyStr, keyvalue));
-                    series.setName("Temperatura");
+                    ambientAdmin.setTitle("Temperatura");
                 });
                 ambientAdmin.getData().add(series);
                 for (final XYChart.Data<String, Number> data : series.getData()) {
@@ -49,7 +50,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
                 {
                     Number keyvalue = (Number) temperaturas.get(keyStr);
                     series.getData().add(new XYChart.Data<String, Number>((String) keyStr, keyvalue));
-                    series.setName("Humedad");
+                    ambientAdmin.setTitle("Humedad");
                 });
                 ambientAdmin.getData().add(series);
                 for (final XYChart.Data<String, Number> data : series.getData()) {
@@ -66,7 +67,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
                 {
                     Number keyvalue = (Number) temperaturas.get(keyStr);
                     series.getData().add(new XYChart.Data<String, Number>((String) keyStr, keyvalue));
-                    series.setName("Luminosidad");
+                    ambientAdmin.setTitle("Luminosidad");
                 });
                 ambientAdmin.getData().add(series);
                 for (final XYChart.Data<String, Number> data : series.getData()) {
@@ -83,7 +84,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
                 {
                     Number keyvalue = (Number) temperaturas.get(keyStr);
                     series.getData().add(new XYChart.Data<String, Number>((String) keyStr, keyvalue));
-                    series.setName("Aire");
+                    ambientAdmin.setTitle("Aire");
                 });
                 ambientAdmin.getData().add(series);
                 for (final XYChart.Data<String, Number> data : series.getData()) {
@@ -93,6 +94,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
             break;
             case 5:{
                 ambientAdmin.getData().clear();
+                ambientAdmin.setTitle("Ruido");
                 XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
                 Type tempsHMType = new TypeToken<TreeMap<String,Double>>(){}.getType();
                 TreeMap <String, Double> temperaturas = Main.gson.fromJson(String.valueOf(Main.ambientales.get("Ruido")), tempsHMType);
@@ -100,7 +102,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
                 {
                     Number keyvalue = (Number) temperaturas.get(keyStr);
                     series.getData().add(new XYChart.Data<String, Number>((String) keyStr, keyvalue));
-                    series.setName("Ruido");
+
                 });
                 ambientAdmin.getData().add(series);
                 for (final XYChart.Data<String, Number> data : series.getData()) {
