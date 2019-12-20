@@ -3,11 +3,14 @@ package application.controllers;
 import application.*;
 import application.controllers.windows.MessageWindow;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -362,6 +365,13 @@ public class ControllerLogin implements Initializable {
 		} else {
 			MessageWindow m = new MessageWindow("INCORRECT USER\nPlease check the data introduced", Main.stage);
 			pField.setText("");
+		}
+	}
+	
+	
+	public void goToWeb() throws IOException, URISyntaxException {
+		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+		    Desktop.getDesktop().browse(new URI("https://10gggggggggg.github.io/SOS-Web/"));
 		}
 	}
 	

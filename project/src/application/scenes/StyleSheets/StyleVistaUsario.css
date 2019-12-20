@@ -35,7 +35,17 @@
 {
     -fx-background-color : #2FACDA;
 }
+.button4{
+    -fx-background-color:transparent;
+}
 
+.button4:hover{
+    -fx-background-color :#0095CA;
+}
+.button4:pressed
+{
+    -fx-background-color : #2FACDA;
+}
 .scroll-pane {
     -fx-background-color:  #3B3292;
 }
