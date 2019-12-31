@@ -141,7 +141,7 @@ public class VentanaDatos{
 				Number ppm = ofi.getPulsos().get(i).getDato();
 				series.getData().add(new XYChart.Data<String, Number>(fecha, ppm));
 			}
-			series.setName("Estadisticas Pulso Cardiaco");
+			lcHR.setTitle("Estadisticas Pulso Cardiaco");
 			lcHR.getData().add(series);
 			for (final XYChart.Data<String, Number> data : series.getData()) {
 				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos
@@ -157,7 +157,7 @@ public class VentanaDatos{
 				Number horas = ofi.getEa().get(i).getTiempo();
 				series.getData().add(new XYChart.Data<String, Number>(fecha, horas));
 			}
-			series.setName("Estadisticas Horas trabajadas");
+			lcEA.setTitle("Estadisticas Horas trabajadas");
 			lcEA.getData().add(series);
 			for (final XYChart.Data<String, Number> data : series.getData()) {
 				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos
@@ -173,7 +173,7 @@ public class VentanaDatos{
 				Number tareasCompletadas = ofi.getProductividad().get(i).getProductividad();
 				series.getData().add(new XYChart.Data<String, Number>(fecha, tareasCompletadas));
 			}
-			series.setName("Estadisticas productividad");
+			lcPR.setTitle("Estadisticas productividad");
 			lcPR.getData().add(series);
 			for (final XYChart.Data<String, Number> data : series.getData()) {
 				Tooltip.install(data.getNode(), new Tooltip("X : " + data.getXValue() + "\n Y : " + data.getYValue())); //ToolTip XY Nodos

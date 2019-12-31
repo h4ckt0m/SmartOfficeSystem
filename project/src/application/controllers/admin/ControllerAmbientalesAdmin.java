@@ -1,19 +1,14 @@
 package application.controllers.admin;
 
 import application.Main;
-import application.Oficinista;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
-import javafx.scene.paint.Color;
-import org.json.simple.JSONObject;
-
 import java.lang.reflect.Type;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
@@ -23,6 +18,7 @@ public class ControllerAmbientalesAdmin implements Initializable {
     LineChart<String,Number> ambientAdmin;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         switch(ControllerVistaAdmin.selectAmb){ //Carga de los linechart en funcion del tipo de ambiental
             case 1:{
                 ambientAdmin.getData().clear();

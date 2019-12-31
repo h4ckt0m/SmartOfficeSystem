@@ -94,7 +94,7 @@
          <children>
             <Pane fx:id="paneEA" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="lcEA" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcEA" legendVisible="false" prefHeight="518.0" prefWidth="539.0" stylesheets="@../StyleSheets/StyleVistaUsario.css">
                      <xAxis>
                         <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>
@@ -111,7 +111,7 @@
                </children></Pane>
             <Pane fx:id="panePR" prefHeight="200.0" prefWidth="516.0">
                <children>
-                  <LineChart fx:id="lcPR" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcPR" legendVisible="false" prefHeight="518.0" prefWidth="539.0" stylesheets="@../StyleSheets/StyleVistaUsario.css">
                      <xAxis>
                         <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>
@@ -128,7 +128,7 @@
                </children></Pane>
             <Pane fx:id="paneHR" prefHeight="416.0" prefWidth="516.0">
                <children>
-                  <LineChart fx:id="lcHR" legendVisible="false" prefHeight="518.0" prefWidth="539.0">
+                  <LineChart fx:id="lcHR" legendVisible="false" prefHeight="518.0" prefWidth="539.0" stylesheets="@../StyleSheets/StyleVistaUsario.css">
                     <xAxis>
                       <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE">
                            <tickLabelFont>

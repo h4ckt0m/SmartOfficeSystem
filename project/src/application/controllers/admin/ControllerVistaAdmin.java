@@ -41,10 +41,6 @@ public class ControllerVistaAdmin implements Initializable {
     @FXML
     private Pane panePrincipal;
     @FXML
-    private Pane paneHR;
-    @FXML
-    private Pane paneRendimiento;
-    @FXML
     private Pane paneConfi;
     @FXML
     private Pane paneCalAire;
@@ -230,7 +226,7 @@ public class ControllerVistaAdmin implements Initializable {
         double aire = 0;  //en porcentaje de contaminacion
  	   
  	   try {
- 		fr=new FileReader("project/ambientales.txt");
+ 		fr=new FileReader("ambientales.txt");
  		String cadena;
  		int counter = 0;
  	    BufferedReader b = new BufferedReader(fr);

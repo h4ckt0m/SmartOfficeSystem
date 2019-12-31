@@ -75,3 +75,7 @@
 .scroll-pane > .corner {
     -fx-background-color: #3B3292;
 }
+
+.chart-title {
+    -fx-text-fill: #ffffff;
+}

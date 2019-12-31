@@ -2,10 +2,8 @@ package application.controllers.admin;
 
 import application.Main;
 import application.Oficinista;
-import application.controllers.admin.VentanaDatos;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -26,7 +24,6 @@ public class ControllerListaVistaAdmin implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //btnCons.setId();
         Oficinista ofi = Main.office.get("Ofi".concat(String.valueOf((ControllerVistaAdmin.i)+1)));
         lbUser.setText(ofi.getUsuario());
         lbNombre.setText(ofi.getNombre());
