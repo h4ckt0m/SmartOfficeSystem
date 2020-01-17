@@ -6,7 +6,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,12 +17,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -213,7 +209,7 @@ public class ControllerVistaUsuario implements Initializable {
        double aire = 0;  //en porcentaje de contaminacion
 	   
 	   try {
-		fr=new FileReader("ambientales.txt");
+		fr=new FileReader("project/ambientales.txt");
 		String cadena;
 		int counter = 0;
 	    BufferedReader b = new BufferedReader(fr);

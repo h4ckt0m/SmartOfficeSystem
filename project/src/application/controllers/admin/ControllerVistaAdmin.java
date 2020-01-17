@@ -3,7 +3,8 @@ package application.controllers.admin;
 import application.Main;
 import application.controllers.usuario.ControllerVistaConfiguracionUsuario;
 import application.controllers.windows.LogOutWindow;
-import javafx.application.Platform;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,7 +22,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
+import javafx.util.Duration;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -30,8 +31,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ControllerVistaAdmin implements Initializable {
     @FXML
@@ -150,19 +149,11 @@ public class ControllerVistaAdmin implements Initializable {
                 Main.stage.setY(event.getScreenY() + yOffset);
             }
         });
-        
-        
-        TimerTask timerTask = new TimerTask() {
-			public void run() {
-				// Aquí el código que queremos ejecutar.
-				Platform.runLater(() -> {
-					updateAmbient();
-				});
-			}
-		};
-		Timer timer = new Timer();
-		// Dentro de 0 milisegundos avísame cada 10000 milisegundos
-		timer.scheduleAtFixedRate(timerTask, 0, 10000);
+
+
+        Timeline actualizarAmbientales = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateAmbient()));
+        actualizarAmbientales.setCycleCount(Timeline.INDEFINITE);
+        actualizarAmbientales.play();
 		
 		 try {
 			 profileImg.setImage(ControllerVistaConfiguracionUsuario.requestImage(Main.loggedAdmin.get("usuario")+".jpg", "perfiles"));
@@ -226,7 +217,7 @@ public class ControllerVistaAdmin implements Initializable {
         double aire = 0;  //en porcentaje de contaminacion
  	   
  	   try {
- 		fr=new FileReader("ambientales.txt");
+ 		fr=new FileReader("project/ambientales.txt");
  		String cadena;
  		int counter = 0;
  	    BufferedReader b = new BufferedReader(fr);
