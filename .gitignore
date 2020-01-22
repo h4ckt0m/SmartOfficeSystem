@@ -8,8 +8,7 @@
 *.ear
 *.nar
 hs_err_pid*
-META-INF/
-.MF
+*.MF
 
 ##############################
 ## Maven
