@@ -12,10 +12,10 @@ Group Project of Computer Engineering students from [Universidad Europea](https:
 
 ## Members of the project
 
-- **Héctor Palencia Sánchez**      -> 
-- **Gonzalo Alcaide Agundez**      -> 
-- **Diego Vicente Vila**           ->
-- **Francisco Afán Rodríguez**     ->
+- **Héctor Palencia Sánchez**       
+- **Gonzalo Alcaide Agundez**       
+- **Diego Vicente Vila**           
+- **Francisco Afán Rodríguez**     
 
 [<img src="https://avatars3.githubusercontent.com/u/19176760?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/HectorSkm)&nbsp;&nbsp;&nbsp;&nbsp; 
 [<img src="https://avatars0.githubusercontent.com/u/47125167?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/10GGGGGGGGGG)&nbsp;&nbsp;&nbsp;&nbsp;
